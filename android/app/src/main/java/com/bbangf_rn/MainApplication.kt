@@ -1,4 +1,4 @@
-package com.bbangf_rn
+package com.bbangfriends
 
 import android.app.Application
 import com.facebook.react.PackageList

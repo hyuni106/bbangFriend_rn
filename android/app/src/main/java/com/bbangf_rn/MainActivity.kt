@@ -1,4 +1,4 @@
-package com.bbangf_rn
+package com.bbangfriends
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
