@@ -5,6 +5,8 @@ import { ScreenName } from './ScreenNames';
 
 export type StackParamList = {
   [ScreenName.SplashScreen]: undefined;
+  [ScreenName.HomeScreen]: undefined;
+  [ScreenName.SettingScreen]: undefined;
 };
 
 export type Props<S extends keyof StackParamList> = {
