@@ -13,6 +13,7 @@ type TypographyStyleKey =
   | 'title_20B'
   | 'title_16B'
   | 'title_14B'
+  | 'title_11B'
   | 'body_16M'
   | 'body_14M'
   | 'body_12M'
@@ -34,6 +35,10 @@ const Typography: Record<TypographyStyleKey, TypographyStyle> = {
   title_14B: {
     fontFamily: FONT_BOLD,
     fontSize: 14,
+  },
+  title_11B: {
+    fontFamily: FONT_BOLD,
+    fontSize: 11,
   },
   body_16M: {
     fontFamily: FONT_MEDIUM,
