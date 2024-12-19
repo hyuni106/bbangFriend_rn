@@ -5,6 +5,7 @@ import { ScreenName } from './ScreenNames';
 
 export type StackParamList = {
   [ScreenName.SplashScreen]: undefined;
+  [ScreenName.MainTabBarScreen]: undefined;
   [ScreenName.HomeScreen]: undefined;
   [ScreenName.SettingScreen]: undefined;
 };
