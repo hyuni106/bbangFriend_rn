@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 
 import { Props } from 'navigation/NavigationProps';
 import { ScreenName } from 'navigation/ScreenNames';
+import { ImgBbangeRound } from 'assets/svgs';
 import { Colors } from 'styles';
+import useMoveScreen from './useMoveScreen';
 
 const SplashScreen = ({}: Props<ScreenName.SplashScreen>): React.ReactElement => {
-  return <View style={styles.root} />;
+  const [splashLaunchedTime] = useState<number>(Date.now());
+
+  useMoveScreen(splashLaunchedTime);
+
+  return (
+    <View style={styles.root}>
+      <ImgBbangeRound width={180} height={180} />
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
@@ -16,6 +26,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: Colors.white,
+    paddingBottom: 40,
   },
 });
 
