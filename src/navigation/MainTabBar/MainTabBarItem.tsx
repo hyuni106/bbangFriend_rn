@@ -26,7 +26,6 @@ const MainTabBarItem = (props: MainTabBarItemProps): React.ReactElement => {
   const tabIconSvgStyle = {
     width: 24,
     height: 24,
-    viewBox: '0 0 24 24',
   } as SvgProps;
 
   return (

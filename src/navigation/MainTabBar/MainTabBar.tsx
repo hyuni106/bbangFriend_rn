@@ -41,14 +41,14 @@ const MainTabBar = (props: MainTabBarProps): React.ReactElement => {
   );
 };
 
-const mainTabBarHeight = 51;
+const mainTabBarHeight = 60;
 
 const createStyles = (scaledSize: ScaledSize) => {
   return StyleSheet.create({
     root: {
       width: scaledSize.width,
       height: mainTabBarHeight,
-      borderTopColor: Colors.gray4,
+      borderTopColor: Colors.gray5,
       borderTopWidth: 1,
       backgroundColor: Colors.white,
     },
