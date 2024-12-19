@@ -1,8 +1,12 @@
 import { useCallback, useEffect } from 'react';
+import { useNavigation } from 'hooks/useNavigation';
+import { ScreenName } from 'navigation/ScreenNames';
 
 const movingScreenMinDelay = 1500;
 
 export default function useMoveScreen(splashLaunchedTime: number) {
+  const navigation = useNavigation();
+
   const runAfterDelay = useCallback(
     (callback: () => void) => {
       const delay = Math.max(0, splashLaunchedTime + movingScreenMinDelay - Date.now());
@@ -13,7 +17,7 @@ export default function useMoveScreen(splashLaunchedTime: number) {
 
   useEffect(() => {
     runAfterDelay(() => {
-      // TODO: MainTabScreen 이동 추가
+      navigation.replace(ScreenName.MainTabBarScreen);
     });
-  }, [runAfterDelay]);
+  }, [navigation, runAfterDelay]);
 }
