@@ -7,6 +7,8 @@ import IcHomeActive from 'assets/svgs/ic_home_active.svg';
 import IcHomeDefault from 'assets/svgs/ic_home_default.svg';
 import IcSettingActive from 'assets/svgs/ic_setting_active.svg';
 import IcSettingDefault from 'assets/svgs/ic_setting_default.svg';
+import IcStarActive from 'assets/svgs/ic_star_active.svg';
+import IcStarDefault from 'assets/svgs/ic_star_default.svg';
 import ImgBbangeRound from 'assets/svgs/img_bbange_round.svg';
 
 export {
@@ -18,5 +20,7 @@ export {
   IcHomeDefault,
   IcSettingActive,
   IcSettingDefault,
+  IcStarActive,
+  IcStarDefault,
   ImgBbangeRound,
 };
