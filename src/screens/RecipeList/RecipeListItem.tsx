@@ -3,6 +3,8 @@ import { StyleProp, ViewStyle, StyleSheet, Text, View } from 'react-native';
 
 import { Colors, Typography } from 'styles';
 import { TouchableOpacity } from 'components/Button';
+import FavoriteButton from '../../components/Recipe/FavoriteButton';
+import RecipeTag from 'components/Recipe/RecipeTag';
 
 interface RecipeListItemProps {
   style?: StyleProp<ViewStyle>;
@@ -15,7 +17,8 @@ const RecipeListItem = (props: RecipeListItemProps): React.ReactElement => {
   return (
     <TouchableOpacity style={[styles.root, style]} onPress={onItemPress}>
       <View style={styles.tagAndLikeContainer}>
-        {/* TODO: Tag 및 즐겨찾기 컴포넌트 추가 예정 */}
+        <RecipeTag title="TAG" isSelected={true} />
+        <FavoriteButton isActive={false} />
       </View>
       <Text style={styles.recipeNameText}>NAME</Text>
       <Text style={styles.recipeDescText}>DESCRIPTION</Text>
@@ -34,10 +37,12 @@ const styles = StyleSheet.create({
   tagAndLikeContainer: {
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
   },
   recipeNameText: {
     ...Typography.title_16B,
     color: Colors.gray1,
+    marginTop: 12,
   },
   recipeDescText: {
     ...Typography.body_14M,
