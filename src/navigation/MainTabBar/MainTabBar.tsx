@@ -6,6 +6,7 @@ import { Colors } from 'styles';
 import { IcHomeDefault, IcHomeActive, IcSettingDefault, IcSettingActive } from 'assets/svgs';
 import MainTabBarItem from './MainTabBarItem';
 import { ScreenName } from 'navigation/ScreenNames';
+import { useTranslation } from 'react-i18next';
 
 const HOME_TAB_INDEX = 0;
 const SETTING_TAB_INDEX = 1;
@@ -13,6 +14,7 @@ const SETTING_TAB_INDEX = 1;
 type MainTabBarProps = BottomTabBarProps;
 
 const MainTabBar = (props: MainTabBarProps): React.ReactElement => {
+  const { t } = useTranslation();
   const window = useWindowDimensions();
   const styles = useMemo(() => createStyles(window), [window]);
 
@@ -25,14 +27,14 @@ const MainTabBar = (props: MainTabBarProps): React.ReactElement => {
         <MainTabBarItem
           normalIcon={IcHomeDefault}
           selectedIcon={IcHomeActive}
-          title={'홈'}
+          title={t('home')}
           isSelected={index === HOME_TAB_INDEX}
           onPress={() => navigation.navigate(ScreenName.HomeScreen)}
         />
         <MainTabBarItem
           normalIcon={IcSettingDefault}
           selectedIcon={IcSettingActive}
-          title={'설정'}
+          title={t('setting')}
           isSelected={index === SETTING_TAB_INDEX}
           onPress={() => navigation.navigate(ScreenName.SettingScreen)}
         />
