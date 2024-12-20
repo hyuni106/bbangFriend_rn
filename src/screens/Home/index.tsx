@@ -8,7 +8,7 @@ import HomeMenu from './HomeMenu';
 import { BgCalculatorBtn, BgCheckListBtn, BgRecipeBtn } from 'assets/svgs';
 import { Colors, Typography } from 'styles';
 
-const HomeScreen = ({}: Props<ScreenName.HomeScreen>): React.ReactElement => {
+const HomeScreen = ({ navigation }: Props<ScreenName.HomeScreen>): React.ReactElement => {
   const { t } = useTranslation();
 
   const menus = [
@@ -16,6 +16,7 @@ const HomeScreen = ({}: Props<ScreenName.HomeScreen>): React.ReactElement => {
       title: t('recipe'),
       description: t('recipe_desc'),
       SvgBackground: BgRecipeBtn,
+      onPress: () => navigation.push(ScreenName.RecipeListScreen),
     },
     {
       title: t('calculator'),
@@ -42,6 +43,7 @@ const HomeScreen = ({}: Props<ScreenName.HomeScreen>): React.ReactElement => {
             title={menu.title}
             description={menu.description}
             SvgBackground={menu.SvgBackground}
+            onPress={menu.onPress}
           />
         ))}
       </View>
