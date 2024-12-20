@@ -9,6 +9,7 @@ import { Colors } from 'styles';
 import RecipeListItem from './RecipeListItem';
 import RecipeListHeader from './RecipeListHeader';
 import { RecipeFilterType } from 'models';
+import RecipeListEmptyView from './RecipeListEmptyView';
 
 const RecipeListScreen = ({}: Props<ScreenName.RecipeListScreen>): React.ReactElement => {
   const { t } = useTranslation();
@@ -33,6 +34,10 @@ const RecipeListScreen = ({}: Props<ScreenName.RecipeListScreen>): React.ReactEl
     );
   };
 
+  const listEmptyComponent = () => {
+    return <RecipeListEmptyView />;
+  };
+
   return (
     <View style={styles.root}>
       <BackButtonNavBar title={t('recipe')} />
@@ -42,6 +47,7 @@ const RecipeListScreen = ({}: Props<ScreenName.RecipeListScreen>): React.ReactEl
         data={new Array(3)}
         renderItem={renderRecipeListItem}
         ListHeaderComponent={listHeaderComponent}
+        ListEmptyComponent={listEmptyComponent}
       />
     </View>
   );
