@@ -11,6 +11,7 @@ type TypographyStyle = Pick<
 type TypographyStyleKey =
   | 'title_24B'
   | 'title_20B'
+  | 'title_18B'
   | 'title_16B'
   | 'title_14B'
   | 'title_11B'
@@ -27,6 +28,10 @@ const Typography: Record<TypographyStyleKey, TypographyStyle> = {
   title_20B: {
     fontFamily: FONT_BOLD,
     fontSize: 20,
+  },
+  title_18B: {
+    fontFamily: FONT_BOLD,
+    fontSize: 18,
   },
   title_16B: {
     fontFamily: FONT_BOLD,

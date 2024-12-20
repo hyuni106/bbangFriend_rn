@@ -2,6 +2,7 @@
 import BgCalculatorBtn from 'assets/svgs/bg_calculator_btn.svg';
 import BgCheckListBtn from 'assets/svgs/bg_check_list_btn.svg';
 import BgRecipeBtn from 'assets/svgs/bg_recipe_btn.svg';
+import IcBack from 'assets/svgs/ic_back.svg';
 import IcHomeActive from 'assets/svgs/ic_home_active.svg';
 import IcHomeDefault from 'assets/svgs/ic_home_default.svg';
 import IcSettingActive from 'assets/svgs/ic_setting_active.svg';
@@ -12,6 +13,7 @@ export {
   BgCalculatorBtn,
   BgCheckListBtn,
   BgRecipeBtn,
+  IcBack,
   IcHomeActive,
   IcHomeDefault,
   IcSettingActive,
