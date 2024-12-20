@@ -1,9 +1,10 @@
 import React from 'react';
-import { Text, StyleSheet, useWindowDimensions, StyleProp, ViewStyle } from 'react-native';
+import { Text, StyleSheet, StyleProp, ViewStyle } from 'react-native';
 import { SvgProps } from 'react-native-svg';
 
 import TouchableOpacity from 'components/TouchableOpacity';
-import { Colors, Typography } from 'styles';
+import { Colors, Dimens, Typography } from 'styles';
+import { IS_SCREEN_HEIGHT_LESS_THAN_700 } from 'utils/PlatformInfo';
 
 interface HomeMenuProps {
   style?: StyleProp<ViewStyle>;
@@ -16,16 +17,27 @@ interface HomeMenuProps {
 const HomeMenu = (props: HomeMenuProps): React.ReactElement => {
   const { style, title, description, SvgBackground, onPress } = props;
 
-  const window = useWindowDimensions();
+  const calculateButtonSize = (width: number, isSmallScreen: boolean) => {
+    const aspectRatio = isSmallScreen ? 90 / 309 : 120 / 309;
+    const buttonWidth = width - 72;
+    const buttonHeight = buttonWidth * aspectRatio;
 
-  const aspectRatio = 120 / 309;
-  const buttonWidth = window.width - 72;
-  const buttonHeight = buttonWidth * aspectRatio;
+    return { buttonWidth, buttonHeight };
+  };
+
+  const { buttonWidth, buttonHeight } = calculateButtonSize(
+    Dimens.screenWidth,
+    IS_SCREEN_HEIGHT_LESS_THAN_700,
+  );
 
   return (
     <TouchableOpacity style={[styles.root, { height: buttonHeight }, style]} onPress={onPress}>
-      <SvgBackground style={styles.svgWrapper} width={buttonWidth} height={buttonHeight} />
-
+      <SvgBackground
+        style={styles.svgWrapper}
+        width={buttonWidth}
+        height={buttonHeight}
+        viewBox={`0 0 ${buttonWidth} ${buttonHeight}`}
+      />
       <Text style={styles.titleText}>{title}</Text>
       <Text style={styles.descText}>{description}</Text>
     </TouchableOpacity>
@@ -36,6 +48,8 @@ const styles = StyleSheet.create({
   root: {
     justifyContent: 'center',
     paddingHorizontal: 20,
+    borderRadius: 16,
+    overflow: 'hidden',
   },
   svgWrapper: {
     position: 'absolute',
