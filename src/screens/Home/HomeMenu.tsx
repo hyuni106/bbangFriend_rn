@@ -21,11 +21,12 @@ const HomeMenu = (props: HomeMenuProps): React.ReactElement => {
     const aspectRatio = isSmallScreen ? 90 / 309 : 120 / 309;
     const buttonWidth = width - 72;
     const buttonHeight = buttonWidth * aspectRatio;
+    const viewBox = isSmallScreen ? `0 0 309 90` : `0 0 309 120`;
 
-    return { buttonWidth, buttonHeight };
+    return { buttonWidth, buttonHeight, viewBox };
   };
 
-  const { buttonWidth, buttonHeight } = calculateButtonSize(
+  const { buttonWidth, buttonHeight, viewBox } = calculateButtonSize(
     Dimens.screenWidth,
     IS_SCREEN_HEIGHT_LESS_THAN_700,
   );
@@ -36,7 +37,7 @@ const HomeMenu = (props: HomeMenuProps): React.ReactElement => {
         style={styles.svgWrapper}
         width={buttonWidth}
         height={buttonHeight}
-        viewBox={`0 0 ${buttonWidth} ${buttonHeight}`}
+        viewBox={viewBox}
       />
       <Text style={styles.titleText}>{title}</Text>
       <Text style={styles.descText}>{description}</Text>
