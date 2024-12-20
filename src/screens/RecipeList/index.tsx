@@ -19,8 +19,18 @@ const RecipeListScreen = ({}: Props<ScreenName.RecipeListScreen>): React.ReactEl
     return <RecipeListItem />;
   };
 
+  const onFilterPress = (type: RecipeFilterType) => {
+    setFilterType(type);
+  };
+
   const listHeaderComponent = () => {
-    return <RecipeListHeader style={styles.header} selectedFilter={filterType} />;
+    return (
+      <RecipeListHeader
+        style={styles.header}
+        selectedFilter={filterType}
+        onItemPress={onFilterPress}
+      />
+    );
   };
 
   return (

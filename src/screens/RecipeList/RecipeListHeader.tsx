@@ -14,7 +14,7 @@ interface FilterItem {
 interface RecipeListHeaderProps {
   style?: StyleProp<ViewStyle>;
   selectedFilter: string;
-  onItemPress?: (type: string) => void;
+  onItemPress?: (type: RecipeFilterType) => void;
 }
 
 const RecipeListHeader = (props: RecipeListHeaderProps): React.ReactElement => {
