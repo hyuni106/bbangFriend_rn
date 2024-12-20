@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
+const { wrapWithReanimatedMetroConfig } = require('react-native-reanimated/metro-config');
 
 /**
  * Metro configuration
@@ -8,7 +10,7 @@ const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
  */
 const defaultConfig = getDefaultConfig(__dirname);
 
-const config = {
+const customConfig = {
   transformer: {
     babelTransformerPath: require.resolve('react-native-svg-transformer'),
   },
@@ -18,4 +20,8 @@ const config = {
   },
 };
 
-module.exports = mergeConfig(defaultConfig, config);
+// 기본 Metro 설정과 customConfig를 병합
+const mergedConfig = mergeConfig(defaultConfig, customConfig);
+
+// Reanimated 설정을 병합
+module.exports = wrapWithReanimatedMetroConfig(mergedConfig);
