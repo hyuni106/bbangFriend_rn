@@ -8,5 +8,9 @@
   "calculator": "배합 계산하기",
   "calculator_desc": "재료가 부족할 땐 비율을 맞춰 계산해보세요!",
   "check_list": "재료 체크리스트",
-  "check_list_desc": "장보기 전에 재료를 다시 확인해보세요!"
+  "check_list_desc": "장보기 전에 재료를 다시 확인해보세요!",
+  "recipe_tag_all": "전체",
+  "recipe_tag_favorite": "즐겨찾기",
+  "recipe_tag_comfits": "제과",
+  "recipe_tag_bread": "제빵"
 }
