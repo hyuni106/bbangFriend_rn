@@ -7,6 +7,7 @@ export type StackParamList = {
   [ScreenName.SplashScreen]: undefined;
   [ScreenName.MainTabBarScreen]: undefined;
   [ScreenName.HomeScreen]: undefined;
+  [ScreenName.RecipeListScreen]: undefined;
   [ScreenName.SettingScreen]: undefined;
 };
 
