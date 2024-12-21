@@ -10,6 +10,7 @@ import RecipeListItem from './RecipeListItem';
 import RecipeListHeader from './RecipeListHeader';
 import { RecipeFilterType } from 'models';
 import RecipeListEmptyView from './RecipeListEmptyView';
+import FloatingButton from './FloatingButton';
 
 const RecipeListScreen = ({}: Props<ScreenName.RecipeListScreen>): React.ReactElement => {
   const { t } = useTranslation();
@@ -49,6 +50,8 @@ const RecipeListScreen = ({}: Props<ScreenName.RecipeListScreen>): React.ReactEl
         ListHeaderComponent={listHeaderComponent}
         ListEmptyComponent={listEmptyComponent}
       />
+
+      <FloatingButton style={styles.floatingButton} />
     </View>
   );
 };
@@ -65,6 +68,11 @@ const styles = StyleSheet.create({
   },
   header: {
     marginTop: 20,
+  },
+  floatingButton: {
+    position: 'absolute',
+    right: 20,
+    bottom: 30,
   },
 });
 
