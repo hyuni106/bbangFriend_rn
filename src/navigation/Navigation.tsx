@@ -8,6 +8,7 @@ import { StackParamList } from './NavigationProps';
 import SplashScreen from 'screens/Splash';
 import MainTabBarScreen from './MainTabBar';
 import RecipeListScreen from 'screens/RecipeList';
+import CreateRecipeScreen from 'screens/CreateRecipe';
 
 export const navigationRef = createNavigationContainerRef<StackParamList>();
 const Stack = createStackNavigator<StackParamList>();
@@ -27,6 +28,7 @@ const Navigation = (): React.ReactElement => {
           }}
         />
         <Stack.Screen name={ScreenName.RecipeListScreen} component={RecipeListScreen} />
+        <Stack.Screen name={ScreenName.CreateRecipeScreen} component={CreateRecipeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

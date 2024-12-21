@@ -3,5 +3,6 @@ export enum ScreenName {
   MainTabBarScreen = 'MainTabBarScreen',
   HomeScreen = 'HomeScreen',
   RecipeListScreen = 'RecipeListScreen',
+  CreateRecipeScreen = 'CreateRecipeScreen',
   SettingScreen = 'SettingScreen',
 }
