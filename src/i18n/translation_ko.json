@@ -14,5 +14,18 @@
   "recipe_tag_comfits": "제과",
   "recipe_tag_bread": "제빵",
   "recipe_no_list": "등록된 레시피가 없어요!",
-  "recipe_no_list_desc": "새로운 레시피를 기록해보세요"
+  "recipe_no_list_desc": "새로운 레시피를 기록해보세요",
+  "recipe_add": "레시피 추가",
+  "category": "분류",
+  "name": "이름",
+  "name_placeholder": "빵 이름을 입력해주세요!",
+  "description": "설명",
+  "description_placeholder": "목록에 보여질 설명이에요!",
+  "source": "출처",
+  "source_placeholder": "참고한 레시피가 있다면 링크를 입력하세요!",
+  "oven_temperature": "오븐 온도",
+  "oven_time": "오븐 시간",
+  "ingredient": "재료",
+  "ingredient_placeholder": "재료명",
+  "add_button": "추가하기"
 }
