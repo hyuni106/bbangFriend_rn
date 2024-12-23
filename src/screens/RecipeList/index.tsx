@@ -12,7 +12,9 @@ import { RecipeFilterType } from 'models';
 import RecipeListEmptyView from './RecipeListEmptyView';
 import FloatingButton from './FloatingButton';
 
-const RecipeListScreen = ({}: Props<ScreenName.RecipeListScreen>): React.ReactElement => {
+const RecipeListScreen = ({
+  navigation,
+}: Props<ScreenName.RecipeListScreen>): React.ReactElement => {
   const { t } = useTranslation();
 
   const [filterType, setFilterType] = useState<RecipeFilterType>(RecipeFilterType.ALL);
@@ -23,6 +25,10 @@ const RecipeListScreen = ({}: Props<ScreenName.RecipeListScreen>): React.ReactEl
 
   const onFilterPress = (type: RecipeFilterType) => {
     setFilterType(type);
+  };
+
+  const onCreateRecipePress = () => {
+    navigation.push(ScreenName.CreateRecipeScreen);
   };
 
   const listHeaderComponent = () => {
@@ -51,7 +57,7 @@ const RecipeListScreen = ({}: Props<ScreenName.RecipeListScreen>): React.ReactEl
         ListEmptyComponent={listEmptyComponent}
       />
 
-      <FloatingButton style={styles.floatingButton} />
+      <FloatingButton style={styles.floatingButton} onPress={onCreateRecipePress} />
     </View>
   );
 };
