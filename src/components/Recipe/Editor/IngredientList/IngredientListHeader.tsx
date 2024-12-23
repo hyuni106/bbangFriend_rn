@@ -14,12 +14,14 @@ const IngredientListHeader = (props: IngredientListHeaderProps): React.ReactElem
 
   return (
     <View style={[styles.root, style]}>
-      <Text style={styles.label}>{t('ingredient')}</Text>
+      <Text style={styles.label}>{t('recipe.form.ingredient.label')}</Text>
 
       <View style={styles.subLabelContainer}>
-        <Text style={[styles.label, styles.flex2]}>{t('ingredient_name')}</Text>
-        <Text style={[styles.label, styles.flex1]}>{t('amount')}</Text>
-        <Text style={[styles.label, styles.flex1]}>{t('unit')}</Text>
+        <Text style={[styles.label, styles.flex2]}>{t('recipe.form.ingredient.fields.name')}</Text>
+        <Text style={[styles.label, styles.flex1]}>
+          {t('recipe.form.ingredient.fields.amount')}
+        </Text>
+        <Text style={[styles.label, styles.flex1]}>{t('recipe.form.ingredient.fields.unit')}</Text>
       </View>
     </View>
   );

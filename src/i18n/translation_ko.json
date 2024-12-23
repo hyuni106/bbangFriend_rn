@@ -15,12 +15,53 @@
     "tags": {
       "all": "전체",
       "favorite": "즐겨찾기",
-      "comfits": "제과",
+      "pastry": "제과",
       "bread": "제빵"
     },
     "no_list": {
       "message": "등록된 레시피가 없어요!",
       "description": "새로운 레시피를 기록해보세요"
+    },
+    "add": "레시피 추가",
+    "form": {
+      "category": {
+        "label": "분류",
+        "placeholder": "제과 / 제빵"
+      },
+      "name": {
+        "label": "이름",
+        "placeholder": "빵 이름을 입력해주세요!"
+      },
+      "description": {
+        "label": "설명",
+        "placeholder": "목록에 보여질 설명이에요!"
+      },
+      "source": {
+        "label": "출처",
+        "placeholder": "참고한 레시피가 있다면 링크를 입력하세요!"
+      },
+      "oven": {
+        "temperature": {
+          "label": "오븐 온도",
+          "unit": "도"
+        },
+        "time": {
+          "label": "오븐 시간",
+          "unit": "분"
+        }
+      },
+      "ingredient": {
+        "label": "재료",
+        "fields": {
+          "name": "재료명",
+          "amount": "용량",
+          "unit": "단위"
+        }
+      },
+      "process": {
+        "label": "과정",
+        "placeholder": "만드는 과정을 입력하세요!"
+      }
     }
   },
   "calculator": {
@@ -31,27 +72,6 @@
     "title": "재료 체크리스트",
     "desc": "장보기 전에 재료를 다시 확인해보세요!"
   },
-  "recipe_add": "레시피 추가",
-  "category": "분류",
-  "recipe_category_placeholder": "제과 / 제빵",
-  "category_pastry": "제과",
-  "category_bread": "제빵",
-  "name": "이름",
-  "name_placeholder": "빵 이름을 입력해주세요!",
-  "description": "설명",
-  "description_placeholder": "목록에 보여질 설명이에요!",
-  "source": "출처",
-  "source_placeholder": "참고한 레시피가 있다면 링크를 입력하세요!",
-  "oven_temperature": "오븐 온도",
-  "temperature": "도",
-  "oven_time": "오븐 시간",
-  "minute": "분",
-  "ingredient": "재료",
-  "ingredient_name": "재료명",
-  "amount": "용량",
-  "unit": "단위",
-  "process": "과정",
-  "process_placeholder": "만드는 과정을 입력하세요!",
   "add_button": "추가하기",
   "recipe_detail": "레시피 상세",
   "delete": "삭제하기",

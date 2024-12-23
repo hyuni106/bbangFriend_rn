@@ -24,7 +24,7 @@ const RecipeListHeader = (props: RecipeListHeaderProps): React.ReactElement => {
   const filters: FilterItem[] = [
     { type: RecipeFilterType.ALL, title: t('recipe.tags.all') },
     { type: RecipeFilterType.FAVORITE, title: t('recipe.tags.favorite') },
-    { type: RecipeFilterType.COMFITS, title: t('recipe.tags.comfits') },
+    { type: RecipeFilterType.COMFITS, title: t('recipe.tags.pastry') },
     { type: RecipeFilterType.BREAD, title: t('recipe.tags.bread') },
   ];
 

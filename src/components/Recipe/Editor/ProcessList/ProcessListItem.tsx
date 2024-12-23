@@ -23,7 +23,7 @@ const ProcessListItem = (props: ProcessListItemProps): React.ReactElement => {
         <TextInput
           style={styles.input}
           value={process}
-          placeholder={t('process_placeholder')}
+          placeholder={t('recipe.form.process.placeholder')}
           placeholderTextColor={Colors.gray4}
         />
       </View>
