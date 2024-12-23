@@ -9,6 +9,7 @@ import { Colors } from 'styles';
 import { LabeledTextInput } from 'components/TextInput';
 import { LabeledDropdown } from 'components/Dropdown';
 import IngredientList from './IngredientList/IngredientList';
+import ProcessList from './ProcessList/ProcessList';
 
 const CreateRecipeScreen = ({}: Props<ScreenName.CreateRecipeScreen>): React.ReactElement => {
   const { t } = useTranslation();
@@ -62,6 +63,8 @@ const CreateRecipeScreen = ({}: Props<ScreenName.CreateRecipeScreen>): React.Rea
         </View>
 
         <IngredientList />
+
+        <ProcessList />
       </ScrollView>
     </View>
   );

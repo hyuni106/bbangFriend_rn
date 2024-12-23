@@ -34,5 +34,7 @@
   "ingredient_name": "재료명",
   "amount": "용량",
   "unit": "단위",
+  "process": "과정",
+  "process_placeholder": "만드는 과정을 입력하세요!",
   "add_button": "추가하기"
 }
