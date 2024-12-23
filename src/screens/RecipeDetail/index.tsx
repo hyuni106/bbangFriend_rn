@@ -9,6 +9,7 @@ import { Colors } from 'styles';
 import RecipeSummary from 'components/Recipe/RecipeSummary';
 import RecipeInfoGroup from './RecipeInfoGroup/RecipeInfoGroup';
 import IngredientList from './IngredientList';
+import RecipeStepList from './RecipeProcessList';
 
 const RecipeDetailScreen = ({}: Props<ScreenName.RecipeDetailScreen>): React.ReactElement => {
   const { t } = useTranslation();
@@ -19,6 +20,7 @@ const RecipeDetailScreen = ({}: Props<ScreenName.RecipeDetailScreen>): React.Rea
         <RecipeSummary />
         <RecipeInfoGroup source={'https://link'} ovenTemperature={'0'} ovenTime={'0'} />
         <IngredientList ingredients={['밀가루', '설탕']} />
+        <RecipeStepList steps={['재료넣기', '반죽하기']} />
       </ScrollView>
     </View>
   );
