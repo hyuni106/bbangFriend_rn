@@ -4,5 +4,6 @@ export enum ScreenName {
   HomeScreen = 'HomeScreen',
   RecipeListScreen = 'RecipeListScreen',
   CreateRecipeScreen = 'CreateRecipeScreen',
+  RecipeDetailScreen = 'RecipeDetailScreen',
   SettingScreen = 'SettingScreen',
 }
