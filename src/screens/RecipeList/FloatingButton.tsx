@@ -1,8 +1,9 @@
-import { TouchableOpacity } from 'components/common/Button';
 import React from 'react';
 import { StyleProp, ViewStyle, StyleSheet } from 'react-native';
 import { Circle, G, Line, Svg } from 'react-native-svg';
+
 import { Colors } from 'styles';
+import { TouchableOpacity } from 'components/common/Base';
 
 interface FloatingButtonProps {
   style?: StyleProp<ViewStyle>;

@@ -6,12 +6,12 @@ import {
   PressableProps,
   StyleSheet,
   GestureResponderEvent,
-  Text,
   ColorValue,
 } from 'react-native';
 
 import { Colors, Typography } from 'styles';
 import { preventDoubleTap } from 'utils/preventDoubleTap';
+import { Text } from 'components/common/Base';
 
 interface SingleButtonProps extends Pick<PressableProps, 'disabled' | 'onPress'> {
   style?: StyleProp<ViewStyle>;

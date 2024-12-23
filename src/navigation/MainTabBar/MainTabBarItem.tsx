@@ -1,15 +1,9 @@
 import React from 'react';
-import {
-  View,
-  StyleSheet,
-  StyleProp,
-  ViewStyle,
-  TouchableWithoutFeedback,
-  Text,
-} from 'react-native';
+import { View, StyleSheet, StyleProp, ViewStyle, TouchableWithoutFeedback } from 'react-native';
 import { SvgProps } from 'react-native-svg';
 
 import { Colors, Typography } from 'styles';
+import { Text } from 'components/common/Base';
 
 interface MainTabBarItemProps {
   style?: StyleProp<ViewStyle>;

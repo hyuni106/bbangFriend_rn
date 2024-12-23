@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, StyleSheet, StyleProp, ViewStyle, Text, TextInput } from 'react-native';
+import { View, StyleSheet, StyleProp, ViewStyle, TextInput } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 import { Colors, Typography } from 'styles';
 import { AddButton, RemoveButton } from 'components/common/Button';
+import { Text } from 'components/common/Base';
 
 interface ProcessListItemProps {
   style?: StyleProp<ViewStyle>;

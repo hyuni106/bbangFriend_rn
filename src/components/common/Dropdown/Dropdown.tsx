@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { StyleProp, ViewStyle, StyleSheet, View, Text } from 'react-native';
+import { StyleProp, ViewStyle, StyleSheet, View } from 'react-native';
 
-import { TouchableOpacity } from 'components/common/Button';
+import { Text, TouchableOpacity } from 'components/common/Base';
 import { Colors, Typography } from 'styles';
 import { hexAlpha } from 'styles/colors';
 import { IcDropdownBottom, IcDropdownTop } from 'assets/svgs';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ColorValue, StyleProp, StyleSheet, ViewStyle } from 'react-native';
 
-import TouchableOpacity from './TouchableOpacity';
+import { TouchableOpacity } from 'components/common/Base';
 import { Colors } from 'styles';
 import Svg, { G, Line, Rect } from 'react-native-svg';
 

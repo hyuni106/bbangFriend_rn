@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, StyleProp, ViewStyle } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, StyleProp, ViewStyle } from 'react-native';
 
 import { Colors, Typography } from 'styles';
+import { Text } from 'components/common/Base';
 
 interface LabeledTextBoxProps {
   style?: StyleProp<ViewStyle>;

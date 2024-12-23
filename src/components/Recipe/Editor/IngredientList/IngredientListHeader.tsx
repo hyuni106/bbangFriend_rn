@@ -1,8 +1,9 @@
 import React from 'react';
-import { StyleProp, ViewStyle, View, Text, StyleSheet } from 'react-native';
+import { StyleProp, ViewStyle, View, StyleSheet } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 import { Typography, Colors } from 'styles';
+import { Text } from 'components/common/Base';
 
 interface IngredientListHeaderProps {
   style?: StyleProp<ViewStyle>;

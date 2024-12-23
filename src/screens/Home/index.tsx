@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 import { Props } from 'navigation/NavigationProps';
@@ -7,6 +7,7 @@ import { ScreenName } from 'navigation/ScreenNames';
 import HomeMenu from './HomeMenu';
 import { BgCalculatorBtn, BgCheckListBtn, BgRecipeBtn } from 'assets/svgs';
 import { Colors, Typography } from 'styles';
+import { Text } from 'components/common/Base';
 
 const HomeScreen = ({ navigation }: Props<ScreenName.HomeScreen>): React.ReactElement => {
   const { t } = useTranslation();

@@ -6,11 +6,11 @@ import {
   StyleSheet,
   TextInput as BaseTextInput,
   TextInputProps as BaseTextInputProps,
-  Text,
   TextStyle,
 } from 'react-native';
 
 import { Colors, Typography } from 'styles';
+import { Text } from 'components/common/Base';
 
 export type TextColorStyle = 'default' | 'error';
 

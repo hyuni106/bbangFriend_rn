@@ -1,5 +1,5 @@
 import { IcStarActive, IcStarDefault } from 'assets/svgs';
-import { TouchableWithoutFeedback } from 'components/common/Button';
+import { TouchableWithoutFeedback } from 'components/common/Base';
 import React from 'react';
 import { StyleProp, StyleSheet, ViewStyle } from 'react-native';
 import Animated, {
