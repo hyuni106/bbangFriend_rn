@@ -1,8 +1,8 @@
 import React from 'react';
-import { Text, StyleSheet, StyleProp, ViewStyle } from 'react-native';
+import { StyleSheet, StyleProp, ViewStyle } from 'react-native';
 import { SvgProps } from 'react-native-svg';
 
-import { TouchableOpacity } from 'components/common/Base';
+import { Text, TouchableOpacity } from 'components/common/Base';
 import { Colors, Dimens, Typography } from 'styles';
 import { IS_SCREEN_HEIGHT_LESS_THAN_700 } from 'utils/PlatformInfo';
 

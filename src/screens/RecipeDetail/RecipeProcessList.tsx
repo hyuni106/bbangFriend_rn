@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, StyleSheet, Text, StyleProp, ViewStyle } from 'react-native';
+import { View, StyleSheet, StyleProp, ViewStyle } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 import { Colors, Typography } from 'styles';
+import { Text } from 'components/common/Base';
 
 interface RecipeProcessListProps {
   style?: StyleProp<ViewStyle>;

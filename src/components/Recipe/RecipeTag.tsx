@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleProp, ViewStyle, View, StyleSheet, TextStyle, Text } from 'react-native';
+import { StyleProp, ViewStyle, View, StyleSheet, TextStyle } from 'react-native';
 
 import { Colors, Typography } from 'styles';
+import { Text } from 'components/common/Base';
 
 interface RecipeTagProps {
   style?: StyleProp<ViewStyle>;

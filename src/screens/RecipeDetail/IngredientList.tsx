@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, StyleSheet, Text, StyleProp, ViewStyle } from 'react-native';
+import { View, StyleSheet, StyleProp, ViewStyle } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 import { Colors, Typography } from 'styles';
+import { Text } from 'components/common/Base';
 
 // TODO: Ingredient object model 생성 및 연결 예정
 interface IngredientListProps {

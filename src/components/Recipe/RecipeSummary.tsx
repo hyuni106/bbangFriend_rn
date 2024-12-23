@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleProp, ViewStyle, StyleSheet, Text, View } from 'react-native';
+import { StyleProp, ViewStyle, StyleSheet, View } from 'react-native';
 
 import { Colors, Typography } from 'styles';
-import { TouchableOpacity } from 'components/common/Base';
+import { Text, TouchableOpacity } from 'components/common/Base';
 import FavoriteButton from './FavoriteButton';
 import RecipeTag from 'components/Recipe/RecipeTag';
 

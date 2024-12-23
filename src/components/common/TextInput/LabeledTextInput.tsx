@@ -1,7 +1,9 @@
 import React from 'react';
-import { StyleProp, ViewStyle, TextStyle, View, Text, StyleSheet } from 'react-native';
+import { StyleProp, ViewStyle, TextStyle, View, StyleSheet } from 'react-native';
+
 import { Typography, Colors } from 'styles';
-import TextInput, { TextInputProps } from './TextInput';
+import TextInput, { TextInputProps } from 'components/common/TextInput/TextInput';
+import { Text } from 'components/common/Base';
 
 interface LabeledTextInputProps extends TextInputProps {
   wrapperStyle?: StyleProp<ViewStyle>;

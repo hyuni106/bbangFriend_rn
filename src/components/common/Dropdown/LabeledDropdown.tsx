@@ -1,7 +1,9 @@
 import React from 'react';
-import { StyleProp, ViewStyle, TextStyle, View, Text, StyleSheet } from 'react-native';
+import { StyleProp, ViewStyle, TextStyle, View, StyleSheet } from 'react-native';
+
 import { Typography, Colors } from 'styles';
-import Dropdown, { DropdownProps } from './Dropdown';
+import Dropdown, { DropdownProps } from 'components/common/Dropdown/Dropdown';
+import { Text } from 'components/common/Base';
 
 interface LabeledDropdownProps<T> extends DropdownProps<T> {
   wrapperStyle?: StyleProp<ViewStyle>;

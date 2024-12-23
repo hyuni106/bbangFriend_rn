@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, TextInput, StyleProp, ViewStyle } from 'react-native';
+import { View, StyleSheet, TextInput, StyleProp, ViewStyle } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
-import { TouchableOpacity } from 'components/common/Base';
+import { Text, TouchableOpacity } from 'components/common/Base';
 import { Colors, Typography } from 'styles';
 
 interface IngredientRowProps {

@@ -7,11 +7,11 @@ import {
   ColorValue,
   useWindowDimensions,
   ScaledSize,
-  Text,
 } from 'react-native';
 
 import { Colors, Dimens, Typography } from 'styles';
 import NavBarButton, { BUTTON_WIDTH, NavBarButtonProps } from './NavBarButton';
+import { Text } from 'components/common/Base';
 
 const leftButtonMarginLeft = 11.5;
 const rightButtonMarginRight = 14;
