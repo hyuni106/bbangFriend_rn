@@ -33,7 +33,7 @@ const IngredientRow = (props: IngredientRowProps): React.ReactElement => {
         style={styles.nameInput}
         editable={isEditable}
         value={name}
-        placeholder={t('ingredient_placeholder')}
+        placeholder={t('ingredient_name')}
         placeholderTextColor={Colors.gray4}
       />
       <TextInput

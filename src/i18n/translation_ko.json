@@ -31,6 +31,8 @@
   "oven_time": "오븐 시간",
   "minute": "분",
   "ingredient": "재료",
-  "ingredient_placeholder": "재료명",
+  "ingredient_name": "재료명",
+  "amount": "용량",
+  "unit": "단위",
   "add_button": "추가하기"
 }
