@@ -27,14 +27,14 @@ const MainTabBar = (props: MainTabBarProps): React.ReactElement => {
         <MainTabBarItem
           normalIcon={IcHomeDefault}
           selectedIcon={IcHomeActive}
-          title={t('home')}
+          title={t('home.title')}
           isSelected={index === HOME_TAB_INDEX}
           onPress={() => navigation.navigate(ScreenName.HomeScreen)}
         />
         <MainTabBarItem
           normalIcon={IcSettingDefault}
           selectedIcon={IcSettingActive}
-          title={t('setting')}
+          title={t('setting.title')}
           isSelected={index === SETTING_TAB_INDEX}
           onPress={() => navigation.navigate(ScreenName.SettingScreen)}
         />

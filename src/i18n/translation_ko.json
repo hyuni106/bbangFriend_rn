@@ -1,14 +1,26 @@
 {
-  "home": "홈",
-  "setting": "설정",
-  "recipe": "레시피",
-  "home_intro_day_with_oven": "따뜻한 오븐과 함께하는 하루",
-  "home_intro_lets_start": "시작해볼까요?",
-  "recipe_desc": "나만의 레시피를 기록해보세요!",
-  "calculator": "배합 계산하기",
-  "calculator_desc": "재료가 부족할 땐 비율을 맞춰 계산해보세요!",
-  "check_list": "재료 체크리스트",
-  "check_list_desc": "장보기 전에 재료를 다시 확인해보세요!",
+  "home": {
+    "title": "홈",
+    "intro": {
+      "day_with_oven": "따뜻한 오븐과 함께하는 하루",
+      "lets_start": "시작해볼까요?"
+    }
+  },
+  "setting": {
+    "title": "설정"
+  },
+  "recipe": {
+    "title": "레시피",
+    "desc": "나만의 레시피를 기록해보세요!"
+  },
+  "calculator": {
+    "title": "배합 계산하기",
+    "desc": "재료가 부족할 땐 비율을 맞춰 계산해보세요!"
+  },
+  "check_list": {
+    "title": "재료 체크리스트",
+    "desc": "장보기 전에 재료를 다시 확인해보세요!"
+  },
   "recipe_tag_all": "전체",
   "recipe_tag_favorite": "즐겨찾기",
   "recipe_tag_comfits": "제과",

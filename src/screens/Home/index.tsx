@@ -13,19 +13,19 @@ const HomeScreen = ({ navigation }: Props<ScreenName.HomeScreen>): React.ReactEl
 
   const menus = [
     {
-      title: t('recipe'),
-      description: t('recipe_desc'),
+      title: t('recipe.title'),
+      description: t('recipe.desc'),
       SvgBackground: BgRecipeBtn,
       onPress: () => navigation.push(ScreenName.RecipeListScreen),
     },
     {
-      title: t('calculator'),
-      description: t('calculator_desc'),
+      title: t('calculator.title'),
+      description: t('calculator.desc'),
       SvgBackground: BgCalculatorBtn,
     },
     {
-      title: t('check_list'),
-      description: t('check_list_desc'),
+      title: t('check_list.title'),
+      description: t('check_list.desc'),
       SvgBackground: BgCheckListBtn,
     },
   ];
@@ -33,8 +33,8 @@ const HomeScreen = ({ navigation }: Props<ScreenName.HomeScreen>): React.ReactEl
   return (
     <View style={styles.root}>
       <View style={styles.menuContainer}>
-        <Text style={styles.introMiniText}>{t('home_intro_day_with_oven')}</Text>
-        <Text style={styles.introBigText}>{t('home_intro_lets_start')}</Text>
+        <Text style={styles.introMiniText}>{t('home.intro.day_with_oven')}</Text>
+        <Text style={styles.introBigText}>{t('home.intro.lets_start')}</Text>
 
         {menus.map((menu, index) => (
           <HomeMenu
