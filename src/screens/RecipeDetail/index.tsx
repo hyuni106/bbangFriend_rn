@@ -7,6 +7,7 @@ import { ScreenName } from 'navigation/ScreenNames';
 import { BackButtonNavBar } from 'components/NavigationBar';
 import { Colors } from 'styles';
 import RecipeSummary from 'components/Recipe/RecipeSummary';
+import RecipeInfoGroup from './RecipeInfoGroup/RecipeInfoGroup';
 
 const RecipeDetailScreen = ({}: Props<ScreenName.RecipeDetailScreen>): React.ReactElement => {
   const { t } = useTranslation();
@@ -15,6 +16,7 @@ const RecipeDetailScreen = ({}: Props<ScreenName.RecipeDetailScreen>): React.Rea
       <BackButtonNavBar title={t('recipe_detail')} />
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.contentContainerStyle}>
         <RecipeSummary />
+        <RecipeInfoGroup source={'https://link'} ovenTemperature={'0'} ovenTime={'0'} />
       </ScrollView>
     </View>
   );
