@@ -24,6 +24,7 @@
     },
     "add": "레시피 추가",
     "detail": "레시피 상세",
+    "modify": "레시피 수정",
     "form": {
       "category": {
         "label": "분류",
@@ -75,6 +76,5 @@
   },
   "add_button": "추가하기",
   "delete": "삭제하기",
-  "modify": "수정하기",
-  "modify_recipe": "레시피 수정"
+  "modify": "수정하기"
 }
