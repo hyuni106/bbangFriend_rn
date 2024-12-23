@@ -10,6 +10,7 @@ import { LabeledTextInput } from 'components/TextInput';
 import { LabeledDropdown } from 'components/Dropdown';
 import IngredientList from './IngredientList/IngredientList';
 import ProcessList from './ProcessList/ProcessList';
+import { SingleButton } from 'components/Button';
 
 const CreateRecipeScreen = ({}: Props<ScreenName.CreateRecipeScreen>): React.ReactElement => {
   const { t } = useTranslation();
@@ -66,6 +67,13 @@ const CreateRecipeScreen = ({}: Props<ScreenName.CreateRecipeScreen>): React.Rea
 
         <ProcessList />
       </ScrollView>
+
+      <SingleButton
+        style={styles.button}
+        defaultColor={Colors.red1}
+        pressedColor={Colors.red2}
+        title={t('add_button')}
+      />
     </View>
   );
 };
@@ -90,6 +98,7 @@ const styles = StyleSheet.create({
   },
   contentContainerStyle: {
     paddingTop: 20,
+    paddingBottom: 80,
     paddingLeft: 16,
     paddingRight: 24,
     gap: 20,
@@ -100,6 +109,11 @@ const styles = StyleSheet.create({
   },
   textAlignRight: {
     textAlign: 'right',
+  },
+  button: {
+    marginHorizontal: 20,
+    marginTop: 16,
+    marginBottom: 32,
   },
 });
 
