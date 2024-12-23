@@ -1,11 +1,12 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, StyleProp, ViewStyle } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 import { Colors, Typography } from 'styles';
 
 // TODO: Ingredient object model 생성 및 연결 예정
 interface IngredientListProps {
+  style?: StyleProp<ViewStyle>;
   ingredients: string[];
 }
 
@@ -18,8 +19,8 @@ const IngredientList = (props: IngredientListProps): React.ReactElement => {
       <Text style={styles.labelText}>{t('ingredient')}</Text>
 
       <View style={styles.rowWrapper}>
-        {ingredients.map((item, index) => (
-          <View key={index} style={styles.row}>
+        {ingredients.map((item, idx) => (
+          <View key={`ingredient_${idx}`} style={styles.row}>
             <Text style={styles.rowText}>{item}</Text>
             <Text style={styles.rowText}>{'0'}</Text>
           </View>
