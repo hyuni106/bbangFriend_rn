@@ -33,12 +33,12 @@ const RecipeInfoGroup = (props: RecipeInfoGroupProps): React.ReactElement => {
 
 const styles = StyleSheet.create({
   root: {
-    marginBottom: 16,
+    flexDirection: 'column',
   },
   rowContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 16,
+    marginTop: 16,
   },
   flex: {
     flex: 1,

@@ -34,7 +34,7 @@ const LabeledTextBox = (props: LabeledTextBoxProps): React.ReactElement => {
 
 const styles = StyleSheet.create({
   root: {
-    marginBottom: 16,
+    flexDirection: 'column',
   },
   labelText: {
     ...Typography.body_12M,
