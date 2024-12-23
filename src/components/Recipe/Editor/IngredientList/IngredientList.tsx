@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, StyleProp, ViewStyle } from 'react-native';
+
 import IngredientListHeader from './IngredientListHeader';
 import IngredientListItem from './IngredientListItem';
 

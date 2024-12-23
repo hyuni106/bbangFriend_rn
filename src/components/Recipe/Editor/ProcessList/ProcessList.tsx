@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, StyleProp, ViewStyle, Text } from 'react-native';
 
-import ProcessListItem from './ProcessListItem';
 import { Typography, Colors } from 'styles';
 import { useTranslation } from 'react-i18next';
+import ProcessListItem from './ProcessListItem';
 
 interface ProcessListProps {
   style?: StyleProp<ViewStyle>;
