@@ -3,15 +3,15 @@ import { StyleProp, ViewStyle, StyleSheet, Text, View } from 'react-native';
 
 import { Colors, Typography } from 'styles';
 import { TouchableOpacity } from 'components/Button';
-import FavoriteButton from '../../components/Recipe/FavoriteButton';
+import FavoriteButton from './FavoriteButton';
 import RecipeTag from 'components/Recipe/RecipeTag';
 
-interface RecipeListItemProps {
+interface RecipeSummaryProps {
   style?: StyleProp<ViewStyle>;
   onItemPress?: () => void;
 }
 
-const RecipeListItem = (props: RecipeListItemProps): React.ReactElement => {
+const RecipeSummary = (props: RecipeSummaryProps): React.ReactElement => {
   const { style, onItemPress } = props;
 
   return (
@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingHorizontal: 20,
     paddingVertical: 16,
-    marginTop: 20,
   },
   tagAndLikeContainer: {
     flexDirection: 'row',
@@ -51,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RecipeListItem;
+export default RecipeSummary;

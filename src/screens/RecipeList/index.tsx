@@ -6,11 +6,11 @@ import { Props } from 'navigation/NavigationProps';
 import { ScreenName } from 'navigation/ScreenNames';
 import { BackButtonNavBar } from 'components/NavigationBar';
 import { Colors } from 'styles';
-import RecipeListItem from './RecipeListItem';
 import RecipeListHeader from './RecipeListHeader';
 import { RecipeFilterType } from 'models';
 import RecipeListEmptyView from './RecipeListEmptyView';
 import FloatingButton from './FloatingButton';
+import RecipeSummary from 'components/Recipe/RecipeSummary';
 
 const RecipeListScreen = ({
   navigation,
@@ -19,16 +19,20 @@ const RecipeListScreen = ({
 
   const [filterType, setFilterType] = useState<RecipeFilterType>(RecipeFilterType.ALL);
 
-  const renderRecipeListItem = () => {
-    return <RecipeListItem />;
-  };
-
   const onFilterPress = (type: RecipeFilterType) => {
     setFilterType(type);
   };
 
   const onCreateRecipePress = () => {
     navigation.push(ScreenName.CreateRecipeScreen);
+  };
+
+  const onRecipeItemPress = () => {
+    navigation.push(ScreenName.RecipeDetailScreen);
+  };
+
+  const renderRecipeListItem = () => {
+    return <RecipeSummary style={styles.listItemWrapper} onItemPress={onRecipeItemPress} />;
   };
 
   const listHeaderComponent = () => {
@@ -73,6 +77,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   header: {
+    marginTop: 20,
+  },
+  listItemWrapper: {
     marginTop: 20,
   },
   floatingButton: {
