@@ -1,11 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet, TextInput } from 'react-native';
+import { View, Text, StyleSheet, TextInput, StyleProp, ViewStyle } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 import { TouchableOpacity } from 'components/Button';
 import { Colors, Typography } from 'styles';
 
 interface IngredientRowProps {
+  style?: StyleProp<ViewStyle>;
   isEditable?: boolean;
   name: string;
   amount: string;
@@ -16,10 +17,18 @@ interface IngredientRowProps {
 
 const IngredientRow = (props: IngredientRowProps): React.ReactElement => {
   const { t } = useTranslation();
-  const { isEditable = false, name, amount, isButton = false, lastValue, onButtonPress } = props;
+  const {
+    style,
+    isEditable = false,
+    name,
+    amount,
+    isButton = false,
+    lastValue,
+    onButtonPress,
+  } = props;
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.root, style]}>
       <TextInput
         style={styles.nameInput}
         editable={isEditable}
@@ -46,7 +55,7 @@ const IngredientRow = (props: IngredientRowProps): React.ReactElement => {
 };
 
 const styles = StyleSheet.create({
-  container: {
+  root: {
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
