@@ -12,48 +12,52 @@ interface RecipeInputsProps {
 const RecipeInputs = ({}: RecipeInputsProps): React.ReactElement => {
   const { t } = useTranslation();
 
-  const categoryOptions = [t('category_pastry'), t('category_bread')];
+  const categoryOptions = [t('recipe.tags.pastry'), t('recipe.tags.bread')];
 
   return (
     <View style={styles.root}>
       <View style={styles.inputContainer}>
         <LabeledDropdown
           wrapperStyle={styles.flex1}
-          label={t('category')}
+          label={t('recipe.form.category.label')}
           optionList={categoryOptions}
-          placeholder={t('recipe_category_placeholder')}
+          placeholder={t('recipe.form.category.placeholder')}
         />
         <LabeledTextInput
           wrapperStyle={styles.flex1_5}
           value=""
-          label={t('name')}
-          placeholder={t('name_placeholder')}
+          label={t('recipe.form.name.label')}
+          placeholder={t('recipe.form.name.placeholder')}
         />
       </View>
 
       <LabeledTextInput
         value=""
-        label={t('description')}
-        placeholder={t('description_placeholder')}
+        label={t('recipe.form.description.label')}
+        placeholder={t('recipe.form.description.placeholder')}
       />
 
-      <LabeledTextInput value="" label={t('source')} placeholder={t('source_placeholder')} />
+      <LabeledTextInput
+        value=""
+        label={t('recipe.form.source.label')}
+        placeholder={t('recipe.form.source.placeholder')}
+      />
 
       <View style={styles.inputContainer}>
         <LabeledTextInput
           wrapperStyle={styles.flex1}
           textInputStyle={styles.textAlignRight}
           value=""
-          label={t('oven_temperature')}
-          suffix={t('temperature')}
+          label={t('recipe.form.oven.temperature.label')}
+          suffix={t('recipe.form.oven.temperature.unit')}
           placeholder="0"
         />
         <LabeledTextInput
           wrapperStyle={styles.flex1}
           textInputStyle={styles.textAlignRight}
           value=""
-          label={t('oven_time')}
-          suffix={t('minute')}
+          label={t('recipe.form.oven.time.label')}
+          suffix={t('recipe.form.oven.time.unit')}
           placeholder="0"
         />
       </View>

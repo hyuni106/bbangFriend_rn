@@ -19,7 +19,7 @@ const ProcessList = (props: ProcessListProps): React.ReactElement => {
 
   return (
     <View style={[styles.root, style]}>
-      <Text style={styles.label}>{t('process')}</Text>
+      <Text style={styles.label}>{t('recipe.form.process.label')}</Text>
       {processList.map((item, idx) => (
         <ProcessListItem key={`process_${idx}`} index={idx + 1} process={item} />
       ))}

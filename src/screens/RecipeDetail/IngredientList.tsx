@@ -16,7 +16,7 @@ const IngredientList = (props: IngredientListProps): React.ReactElement => {
 
   return (
     <View style={styles.root}>
-      <Text style={styles.labelText}>{t('ingredient')}</Text>
+      <Text style={styles.labelText}>{t('recipe.form.ingredient.label')}</Text>
 
       <View style={styles.rowWrapper}>
         {ingredients.map((item, idx) => (

@@ -13,8 +13,8 @@ const RecipeListEmptyView = (props: RecipeListEmptyViewProps): React.ReactElemen
 
   return (
     <View style={[styles.root, style]}>
-      <Text style={styles.titleText}>{t('recipe_no_list')}</Text>
-      <Text style={styles.descText}>{t('recipe_no_list_desc')}</Text>
+      <Text style={styles.titleText}>{t('recipe.no_list.message')}</Text>
+      <Text style={styles.descText}>{t('recipe.no_list.description')}</Text>
     </View>
   );
 };

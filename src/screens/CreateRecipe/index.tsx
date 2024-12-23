@@ -14,7 +14,7 @@ const CreateRecipeScreen = ({}: Props<ScreenName.CreateRecipeScreen>): React.Rea
 
   return (
     <View style={styles.root}>
-      <BackButtonNavBar title={t('recipe_add')} />
+      <BackButtonNavBar title={t('recipe.add')} />
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.contentContainerStyle}>
         <RecipeInputs />
         <IngredientList />
@@ -25,7 +25,7 @@ const CreateRecipeScreen = ({}: Props<ScreenName.CreateRecipeScreen>): React.Rea
         style={styles.button}
         defaultColor={Colors.red1}
         pressedColor={Colors.red2}
-        title={t('add_button')}
+        title={t('button.add')}
       />
     </View>
   );

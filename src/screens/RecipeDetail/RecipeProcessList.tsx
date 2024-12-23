@@ -15,7 +15,7 @@ const RecipeProcessList = (props: RecipeProcessListProps): React.ReactElement =>
 
   return (
     <View style={styles.root}>
-      <Text style={styles.labelText}>{t('process')}</Text>
+      <Text style={styles.labelText}>{t('recipe.form.process.label')}</Text>
 
       <View style={styles.rowWrapper}>
         {steps.map((step, idx) => (

@@ -23,7 +23,7 @@ const RecipeDetailScreen = ({
 
   return (
     <View style={styles.root}>
-      <BackButtonNavBar title={t('recipe_detail')} />
+      <BackButtonNavBar title={t('recipe.detail')} />
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.contentContainerStyle}>
         <RecipeSummary />
         <RecipeInfoGroup source={'https://link'} ovenTemperature={'0'} ovenTime={'0'} />
@@ -33,12 +33,12 @@ const RecipeDetailScreen = ({
         <DoubleButton
           style={styles.buttonWrapper}
           leftButton={{
-            title: t('delete'),
+            title: t('button.delete'),
             defaultColor: Colors.gray4,
             pressedColor: Colors.gray3,
           }}
           rightButton={{
-            title: t('modify'),
+            title: t('button.modify'),
             defaultColor: Colors.red1,
             pressedColor: Colors.red2,
             onPress: onModifyPress,

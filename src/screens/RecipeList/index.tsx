@@ -51,7 +51,7 @@ const RecipeListScreen = ({
 
   return (
     <View style={styles.root}>
-      <BackButtonNavBar title={t('recipe')} />
+      <BackButtonNavBar title={t('recipe.title')} />
 
       <FlatList
         style={styles.list}
