@@ -7,6 +7,10 @@ import { StackParamList } from './NavigationProps';
 
 import SplashScreen from 'screens/Splash';
 import MainTabBarScreen from './MainTabBar';
+import RecipeListScreen from 'screens/RecipeList';
+import CreateRecipeScreen from 'screens/CreateRecipe';
+import ModifyRecipeScreen from 'screens/ModifyRecipe';
+import RecipeDetailScreen from 'screens/RecipeDetail';
 
 export const navigationRef = createNavigationContainerRef<StackParamList>();
 const Stack = createStackNavigator<StackParamList>();
@@ -25,6 +29,10 @@ const Navigation = (): React.ReactElement => {
             cardStyleInterpolator: CardStyleInterpolators.forNoAnimation,
           }}
         />
+        <Stack.Screen name={ScreenName.RecipeListScreen} component={RecipeListScreen} />
+        <Stack.Screen name={ScreenName.CreateRecipeScreen} component={CreateRecipeScreen} />
+        <Stack.Screen name={ScreenName.ModifyRecipeScreen} component={ModifyRecipeScreen} />
+        <Stack.Screen name={ScreenName.RecipeDetailScreen} component={RecipeDetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
