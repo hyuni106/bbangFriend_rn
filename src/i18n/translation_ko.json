@@ -39,5 +39,6 @@
   "add_button": "추가하기",
   "recipe_detail": "레시피 상세",
   "delete": "삭제하기",
-  "modify": "수정하기"
+  "modify": "수정하기",
+  "modify_recipe": "레시피 수정"
 }

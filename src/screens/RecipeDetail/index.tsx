@@ -12,8 +12,15 @@ import IngredientList from './IngredientList';
 import RecipeStepList from './RecipeProcessList';
 import { DoubleButton } from 'components/Button';
 
-const RecipeDetailScreen = ({}: Props<ScreenName.RecipeDetailScreen>): React.ReactElement => {
+const RecipeDetailScreen = ({
+  navigation,
+}: Props<ScreenName.RecipeDetailScreen>): React.ReactElement => {
   const { t } = useTranslation();
+
+  const onModifyPress = () => {
+    navigation.push(ScreenName.ModifyRecipeScreen);
+  };
+
   return (
     <View style={styles.root}>
       <BackButtonNavBar title={t('recipe_detail')} />
@@ -34,6 +41,7 @@ const RecipeDetailScreen = ({}: Props<ScreenName.RecipeDetailScreen>): React.Rea
             title: t('modify'),
             defaultColor: Colors.red1,
             pressedColor: Colors.red2,
+            onPress: onModifyPress,
           }}
         />
       </ScrollView>
