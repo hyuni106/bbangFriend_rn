@@ -3,7 +3,7 @@ import { View, StyleSheet, StyleProp, ViewStyle } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 import { LabeledTextInput } from 'components/common/TextInput';
-import { LabeledDropdown } from 'components/Dropdown';
+import { LabeledDropdown } from 'components/common/Dropdown';
 
 interface RecipeInputsProps {
   style?: StyleProp<ViewStyle>;
