@@ -10,6 +10,7 @@ import RecipeSummary from 'components/Recipe/RecipeSummary';
 import RecipeInfoGroup from './RecipeInfoGroup/RecipeInfoGroup';
 import IngredientList from './IngredientList';
 import RecipeStepList from './RecipeProcessList';
+import { DoubleButton } from 'components/Button';
 
 const RecipeDetailScreen = ({}: Props<ScreenName.RecipeDetailScreen>): React.ReactElement => {
   const { t } = useTranslation();
@@ -21,6 +22,20 @@ const RecipeDetailScreen = ({}: Props<ScreenName.RecipeDetailScreen>): React.Rea
         <RecipeInfoGroup source={'https://link'} ovenTemperature={'0'} ovenTime={'0'} />
         <IngredientList ingredients={['밀가루', '설탕']} />
         <RecipeStepList steps={['재료넣기', '반죽하기']} />
+
+        <DoubleButton
+          style={styles.buttonWrapper}
+          leftButton={{
+            title: t('delete'),
+            defaultColor: Colors.gray4,
+            pressedColor: Colors.gray3,
+          }}
+          rightButton={{
+            title: t('modify'),
+            defaultColor: Colors.red1,
+            pressedColor: Colors.red2,
+          }}
+        />
       </ScrollView>
     </View>
   );
@@ -37,10 +52,13 @@ const styles = StyleSheet.create({
   },
   contentContainerStyle: {
     paddingTop: 20,
-    paddingBottom: 80,
+    paddingBottom: 40,
     paddingLeft: 16,
     paddingRight: 24,
     gap: 20,
+  },
+  buttonWrapper: {
+    marginTop: 20,
   },
 });
 

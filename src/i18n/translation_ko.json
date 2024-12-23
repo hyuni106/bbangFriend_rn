@@ -37,5 +37,7 @@
   "process": "과정",
   "process_placeholder": "만드는 과정을 입력하세요!",
   "add_button": "추가하기",
-  "recipe_detail": "레시피 상세"
+  "recipe_detail": "레시피 상세",
+  "delete": "삭제하기",
+  "modify": "수정하기"
 }
