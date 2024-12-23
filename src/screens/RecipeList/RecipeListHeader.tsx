@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleProp, ViewStyle, StyleSheet, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
-import { TouchableOpacity } from 'components/common/Button';
+import { TouchableOpacity } from 'components/common/Base';
 import RecipeTag from 'components/Recipe/RecipeTag';
 import { RecipeFilterType } from 'models';
 
