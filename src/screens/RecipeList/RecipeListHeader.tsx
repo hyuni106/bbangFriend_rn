@@ -22,10 +22,10 @@ const RecipeListHeader = (props: RecipeListHeaderProps): React.ReactElement => {
   const { style, selectedFilter, onItemPress } = props;
 
   const filters: FilterItem[] = [
-    { type: RecipeFilterType.ALL, title: t('recipe_tag_all') },
-    { type: RecipeFilterType.FAVORITE, title: t('recipe_tag_favorite') },
-    { type: RecipeFilterType.COMFITS, title: t('recipe_tag_comfits') },
-    { type: RecipeFilterType.BREAD, title: t('recipe_tag_bread') },
+    { type: RecipeFilterType.ALL, title: t('recipe.tags.all') },
+    { type: RecipeFilterType.FAVORITE, title: t('recipe.tags.favorite') },
+    { type: RecipeFilterType.COMFITS, title: t('recipe.tags.comfits') },
+    { type: RecipeFilterType.BREAD, title: t('recipe.tags.bread') },
   ];
 
   return (

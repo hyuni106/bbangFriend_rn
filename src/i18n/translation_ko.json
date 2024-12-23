@@ -11,7 +11,17 @@
   },
   "recipe": {
     "title": "레시피",
-    "desc": "나만의 레시피를 기록해보세요!"
+    "desc": "나만의 레시피를 기록해보세요!",
+    "tags": {
+      "all": "전체",
+      "favorite": "즐겨찾기",
+      "comfits": "제과",
+      "bread": "제빵"
+    },
+    "no_list": {
+      "message": "등록된 레시피가 없어요!",
+      "description": "새로운 레시피를 기록해보세요"
+    }
   },
   "calculator": {
     "title": "배합 계산하기",
@@ -21,12 +31,6 @@
     "title": "재료 체크리스트",
     "desc": "장보기 전에 재료를 다시 확인해보세요!"
   },
-  "recipe_tag_all": "전체",
-  "recipe_tag_favorite": "즐겨찾기",
-  "recipe_tag_comfits": "제과",
-  "recipe_tag_bread": "제빵",
-  "recipe_no_list": "등록된 레시피가 없어요!",
-  "recipe_no_list_desc": "새로운 레시피를 기록해보세요",
   "recipe_add": "레시피 추가",
   "category": "분류",
   "recipe_category_placeholder": "제과 / 제빵",
