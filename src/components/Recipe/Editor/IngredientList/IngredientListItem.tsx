@@ -3,7 +3,7 @@ import { View, StyleSheet, StyleProp, ViewStyle } from 'react-native';
 
 import { Colors } from 'styles';
 import IngredientRow from 'components/common/IngredientRow';
-import { AddButton, RemoveButton } from 'components/Button';
+import { AddButton, RemoveButton } from 'components/common/Button';
 
 interface IngredientListItemProps {
   style?: StyleProp<ViewStyle>;

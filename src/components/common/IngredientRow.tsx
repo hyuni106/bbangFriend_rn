@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, TextInput, StyleProp, ViewStyle } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
-import { TouchableOpacity } from 'components/Button';
+import { TouchableOpacity } from 'components/common/Button';
 import { Colors, Typography } from 'styles';
 
 interface IngredientRowProps {
