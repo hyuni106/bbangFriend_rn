@@ -6,7 +6,7 @@ import { Props } from 'navigation/NavigationProps';
 import { ScreenName } from 'navigation/ScreenNames';
 import { BackButtonNavBar } from 'components/NavigationBar';
 import { Colors } from 'styles';
-import { SingleButton } from 'components/Button';
+import { SingleButton } from 'components/common/Button';
 import { IngredientList, ProcessList, RecipeInputs } from 'components/Recipe/Editor';
 
 const CreateRecipeScreen = ({}: Props<ScreenName.CreateRecipeScreen>): React.ReactElement => {

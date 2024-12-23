@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleProp, ViewStyle, StyleSheet } from 'react-native';
 import { SvgProps } from 'react-native-svg';
 
-import { TouchableOpacity } from 'components/Button';
+import { TouchableOpacity } from 'components/common/Button';
 
 export const BUTTON_WIDTH = 35;
 

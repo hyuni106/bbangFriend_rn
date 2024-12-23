@@ -10,7 +10,7 @@ import RecipeSummary from 'components/Recipe/RecipeSummary';
 import RecipeInfoGroup from './RecipeInfoGroup/RecipeInfoGroup';
 import IngredientList from './IngredientList';
 import RecipeStepList from './RecipeProcessList';
-import { DoubleButton } from 'components/Button';
+import { DoubleButton } from 'components/common/Button';
 
 const RecipeDetailScreen = ({
   navigation,

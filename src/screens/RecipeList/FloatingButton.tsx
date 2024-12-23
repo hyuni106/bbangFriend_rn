@@ -1,4 +1,4 @@
-import { TouchableOpacity } from 'components/Button';
+import { TouchableOpacity } from 'components/common/Button';
 import React from 'react';
 import { StyleProp, ViewStyle, StyleSheet } from 'react-native';
 import { Circle, G, Line, Svg } from 'react-native-svg';

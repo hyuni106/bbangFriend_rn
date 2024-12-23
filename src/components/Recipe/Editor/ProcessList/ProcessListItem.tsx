@@ -3,7 +3,7 @@ import { View, StyleSheet, StyleProp, ViewStyle, Text, TextInput } from 'react-n
 import { useTranslation } from 'react-i18next';
 
 import { Colors, Typography } from 'styles';
-import { AddButton, RemoveButton } from 'components/Button';
+import { AddButton, RemoveButton } from 'components/common/Button';
 
 interface ProcessListItemProps {
   style?: StyleProp<ViewStyle>;
