@@ -8,6 +8,8 @@ import { BackButtonNavBar } from 'components/NavigationBar';
 import { Colors } from 'styles';
 import { LabeledTextInput } from 'components/TextInput';
 import { LabeledDropdown } from 'components/Dropdown';
+import IngredientListHeader from './IngredientListHeader';
+import IngredientListItem from './IngredientListItem';
 
 const CreateRecipeScreen = ({}: Props<ScreenName.CreateRecipeScreen>): React.ReactElement => {
   const { t } = useTranslation();
@@ -59,6 +61,18 @@ const CreateRecipeScreen = ({}: Props<ScreenName.CreateRecipeScreen>): React.Rea
             placeholder="0"
           />
         </View>
+
+        <View>
+          <IngredientListHeader />
+          {/* TODO: 추가된 재료 목록 저장 이벤트 및 컴포넌트 연결 예정 */}
+          <IngredientListItem
+            style={styles.ingredientItem}
+            isAddItem
+            name=""
+            amount=""
+            lastValue="g"
+          />
+        </View>
       </ScrollView>
     </View>
   );
@@ -94,6 +108,9 @@ const styles = StyleSheet.create({
   },
   textAlignRight: {
     textAlign: 'right',
+  },
+  ingredientItem: {
+    marginTop: 8,
   },
 });
 
