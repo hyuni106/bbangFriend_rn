@@ -17,6 +17,7 @@ const Colors = {
   orange2: '#F4B489',
   blue1: '#90A5F8',
   blue2: '#BCC9FB',
+  blue_link: '#2D68DB',
 } as const;
 
 export default Colors;
