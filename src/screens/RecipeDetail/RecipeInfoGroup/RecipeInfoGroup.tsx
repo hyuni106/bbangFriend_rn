@@ -17,15 +17,20 @@ const RecipeInfoGroup = (props: RecipeInfoGroupProps): React.ReactElement => {
 
   return (
     <View style={styles.root}>
-      <LabeledTextBox label="출처" value={source} isLink={true} />
+      <LabeledTextBox label={t('recipe.form.source.label')} value={source} isLink={true} />
       <View style={styles.rowContainer}>
         <LabeledTextBox
           style={styles.flex}
-          label={t('oven_temperature')}
+          label={t('recipe.form.oven.temperature.label')}
           align="right"
           value={ovenTemperature}
         />
-        <LabeledTextBox style={styles.flex} label={t('oven_time')} align="right" value={ovenTime} />
+        <LabeledTextBox
+          style={styles.flex}
+          label={t('recipe.form.oven.time.label')}
+          align="right"
+          value={ovenTime}
+        />
       </View>
     </View>
   );

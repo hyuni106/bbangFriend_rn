@@ -23,6 +23,7 @@
       "description": "새로운 레시피를 기록해보세요"
     },
     "add": "레시피 추가",
+    "detail": "레시피 상세",
     "form": {
       "category": {
         "label": "분류",
@@ -73,7 +74,6 @@
     "desc": "장보기 전에 재료를 다시 확인해보세요!"
   },
   "add_button": "추가하기",
-  "recipe_detail": "레시피 상세",
   "delete": "삭제하기",
   "modify": "수정하기",
   "modify_recipe": "레시피 수정"

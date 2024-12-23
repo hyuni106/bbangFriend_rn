@@ -23,7 +23,7 @@ const RecipeDetailScreen = ({
 
   return (
     <View style={styles.root}>
-      <BackButtonNavBar title={t('recipe_detail')} />
+      <BackButtonNavBar title={t('recipe.detail')} />
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.contentContainerStyle}>
         <RecipeSummary />
         <RecipeInfoGroup source={'https://link'} ovenTemperature={'0'} ovenTime={'0'} />
