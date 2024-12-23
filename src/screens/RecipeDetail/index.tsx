@@ -33,12 +33,12 @@ const RecipeDetailScreen = ({
         <DoubleButton
           style={styles.buttonWrapper}
           leftButton={{
-            title: t('delete'),
+            title: t('button.delete'),
             defaultColor: Colors.gray4,
             pressedColor: Colors.gray3,
           }}
           rightButton={{
-            title: t('modify'),
+            title: t('button.modify'),
             defaultColor: Colors.red1,
             pressedColor: Colors.red2,
             onPress: onModifyPress,

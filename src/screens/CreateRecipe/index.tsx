@@ -25,7 +25,7 @@ const CreateRecipeScreen = ({}: Props<ScreenName.CreateRecipeScreen>): React.Rea
         style={styles.button}
         defaultColor={Colors.red1}
         pressedColor={Colors.red2}
-        title={t('add_button')}
+        title={t('button.add')}
       />
     </View>
   );
