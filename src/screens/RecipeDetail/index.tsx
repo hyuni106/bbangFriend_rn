@@ -8,6 +8,7 @@ import { BackButtonNavBar } from 'components/NavigationBar';
 import { Colors } from 'styles';
 import RecipeSummary from 'components/Recipe/RecipeSummary';
 import RecipeInfoGroup from './RecipeInfoGroup/RecipeInfoGroup';
+import IngredientList from './IngredientList';
 
 const RecipeDetailScreen = ({}: Props<ScreenName.RecipeDetailScreen>): React.ReactElement => {
   const { t } = useTranslation();
@@ -17,6 +18,7 @@ const RecipeDetailScreen = ({}: Props<ScreenName.RecipeDetailScreen>): React.Rea
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.contentContainerStyle}>
         <RecipeSummary />
         <RecipeInfoGroup source={'https://link'} ovenTemperature={'0'} ovenTime={'0'} />
+        <IngredientList ingredients={['밀가루', '설탕']} />
       </ScrollView>
     </View>
   );
