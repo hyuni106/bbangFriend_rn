@@ -68,7 +68,35 @@
   },
   "calculator": {
     "title": "배합 계산하기",
-    "desc": "재료가 부족할 땐 비율을 맞춰 계산해보세요!"
+    "desc": "재료가 부족할 땐 비율을 맞춰 계산해보세요!",
+    "tab": {
+      "material_based": "재료 기준 변환",
+      "ratio_based": "배합 변환"
+    },
+    "form": {
+      "fields": {
+        "name": {
+          "label": "재료명",
+          "suffix": "가"
+        },
+        "amount": {
+          "label": "재료 양",
+          "suffix": "g 혹은 mL 만큼 있어요"
+        },
+        "ratio": {
+          "label": "배수",
+          "suffix": "배로 만들거에요"
+        }
+      },
+      "note": "* 기준이 되는 재료명을 똑같이 입력해야 계산돼요!"
+    },
+    "table": {
+      "headers": {
+        "material": "재료명",
+        "before_conversion": "변환 전",
+        "after_conversion": "변환 후"
+      }
+    }
   },
   "check_list": {
     "title": "재료 체크리스트",
