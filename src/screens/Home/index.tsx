@@ -23,6 +23,7 @@ const HomeScreen = ({ navigation }: Props<ScreenName.HomeScreen>): React.ReactEl
       title: t('calculator.title'),
       description: t('calculator.desc'),
       SvgBackground: BgCalculatorBtn,
+      onPress: () => navigation.push(ScreenName.CalculatorScreen),
     },
     {
       title: t('check_list.title'),
