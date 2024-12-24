@@ -10,7 +10,7 @@ import { Colors } from 'styles';
 import { TabBar } from 'components/common/Base';
 import TabView, { TabRoute } from 'components/common/Base/TabView';
 
-const RatioCalculatorScreen = ({}: Props<ScreenName.RatioCalculatorScreen>): React.ReactElement => {
+const CalculatorScreen = ({}: Props<ScreenName.CalculatorScreen>): React.ReactElement => {
   const { t } = useTranslation();
   const [index, setIndex] = React.useState<number>(0);
 
@@ -56,4 +56,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RatioCalculatorScreen;
+export default CalculatorScreen;
