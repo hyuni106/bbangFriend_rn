@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingLeft: 16,
-    paddingRight: 40,
+    paddingRight: 46,
   },
   label: {
     ...Typography.body_12M,

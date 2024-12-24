@@ -21,7 +21,7 @@ const IngredientListItem = (props: IngredientListItemProps): React.ReactElement 
     <View style={[styles.root, style]}>
       <IngredientRow
         isEditable={true}
-        isButton={true}
+        isButton={false}
         name={name}
         amount={amount}
         lastValue={lastValue}

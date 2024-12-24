@@ -18,9 +18,9 @@ const IngredientList = (props: IngredientListProps): React.ReactElement => {
     <View style={[styles.root, style]}>
       <IngredientListHeader />
       {ingredientList.map((item, idx) => (
-        <IngredientListItem key={`ingredient_${idx}`} name={item} amount="" lastValue="g" />
+        <IngredientListItem key={`ingredient_${idx}`} name={item} amount="" lastValue="0" />
       ))}
-      <IngredientListItem style={styles.ingredientItem} isAddItem name="" amount="" lastValue="g" />
+      <IngredientListItem style={styles.ingredientItem} isAddItem name="" amount="" lastValue="0" />
     </View>
   );
 };
