@@ -9,6 +9,8 @@ import { BackButtonNavBar } from 'components/NavigationBar';
 import { Colors } from 'styles';
 import { TabBar } from 'components/common/Base';
 import TabView, { TabRoute } from 'components/common/Base/TabView';
+import MaterialBasedCalculator from './MaterialBasedCalculator';
+import RatioBasedCalculator from './RatioBasedCalculator';
 
 const CalculatorScreen = ({}: Props<ScreenName.CalculatorScreen>): React.ReactElement => {
   const { t } = useTranslation();
@@ -26,9 +28,9 @@ const CalculatorScreen = ({}: Props<ScreenName.CalculatorScreen>): React.ReactEl
   const renderScene = ({ route }: { route: TabRoute }) => {
     switch (route.key) {
       case 'material_based':
-        return <View />;
+        return <MaterialBasedCalculator style={styles.tabView} />;
       case 'ratio_based':
-        return <View />;
+        return <RatioBasedCalculator style={styles.tabView} />;
       default:
         return <></>;
     }
@@ -53,6 +55,9 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: Colors.gray6,
+  },
+  tabView: {
+    flex: 1,
   },
 });
 
