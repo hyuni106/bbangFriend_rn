@@ -12,6 +12,7 @@ export type StackParamList = {
   [ScreenName.ModifyRecipeScreen]: undefined;
   [ScreenName.RecipeDetailScreen]: undefined;
   [ScreenName.CalculatorScreen]: undefined;
+  [ScreenName.CheckListScreen]: undefined;
   [ScreenName.SettingScreen]: undefined;
 };
 
