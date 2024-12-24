@@ -1,10 +1,11 @@
 import React from 'react';
-import { StyleProp, ViewStyle, StyleSheet, View } from 'react-native';
+import { StyleProp, ViewStyle, StyleSheet, ScrollView } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 import { Colors, Typography } from 'styles';
 import RowSuffixInput from 'components/Calculator/RowSuffixInput';
 import { Text } from 'components/common/Base';
+import IngredientList from 'components/Calculator/IngredientList/IngredientList';
 
 interface MaterialBasedCalculatorProps {
   style?: StyleProp<ViewStyle>;
@@ -16,7 +17,7 @@ const MaterialBasedCalculator = (props: MaterialBasedCalculatorProps): React.Rea
   const { style } = props;
 
   return (
-    <View style={[styles.root, style]}>
+    <ScrollView style={[styles.root, style]}>
       <RowSuffixInput
         placeholder={t('calculator.form.fields.name.label')}
         suffix={t('calculator.form.fields.name.suffix')}
@@ -27,7 +28,9 @@ const MaterialBasedCalculator = (props: MaterialBasedCalculatorProps): React.Rea
         suffix={t('calculator.form.fields.amount.suffix')}
       />
       <Text style={styles.useNoteText}>{t('calculator.form.note')}</Text>
-    </View>
+
+      <IngredientList style={styles.ingredientListWrapper} />
+    </ScrollView>
   );
 };
 
@@ -46,6 +49,9 @@ const styles = StyleSheet.create({
     textAlign: 'right',
     marginTop: 12,
     lineHeight: 20,
+  },
+  ingredientListWrapper: {
+    marginTop: 24,
   },
 });
 
