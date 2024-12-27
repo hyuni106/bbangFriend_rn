@@ -29,6 +29,7 @@ const HomeScreen = ({ navigation }: Props<ScreenName.HomeScreen>): React.ReactEl
       title: t('check_list.title'),
       description: t('check_list.desc'),
       SvgBackground: BgCheckListBtn,
+      onPress: () => navigation.push(ScreenName.CheckListScreen),
     },
   ];
 

@@ -7,5 +7,6 @@ export enum ScreenName {
   ModifyRecipeScreen = 'ModifyRecipeScreen',
   RecipeDetailScreen = 'RecipeDetailScreen',
   CalculatorScreen = 'CalculatorScreen',
+  CheckListScreen = 'CheckListScreen',
   SettingScreen = 'SettingScreen',
 }

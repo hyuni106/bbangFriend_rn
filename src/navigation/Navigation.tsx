@@ -12,6 +12,7 @@ import CreateRecipeScreen from 'screens/CreateRecipe';
 import ModifyRecipeScreen from 'screens/ModifyRecipe';
 import RecipeDetailScreen from 'screens/RecipeDetail';
 import CalculatorScreen from 'screens/Calculator';
+import CheckListScreen from 'screens/CheckList';
 
 export const navigationRef = createNavigationContainerRef<StackParamList>();
 const Stack = createStackNavigator<StackParamList>();
@@ -35,6 +36,7 @@ const Navigation = (): React.ReactElement => {
         <Stack.Screen name={ScreenName.ModifyRecipeScreen} component={ModifyRecipeScreen} />
         <Stack.Screen name={ScreenName.RecipeDetailScreen} component={RecipeDetailScreen} />
         <Stack.Screen name={ScreenName.CalculatorScreen} component={CalculatorScreen} />
+        <Stack.Screen name={ScreenName.CheckListScreen} component={CheckListScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
