@@ -5,12 +5,12 @@ export enum RecipeFilterType {
   BREAD = 'bread',
 }
 
-export interface Tag {
+export interface RecipeTag {
   id: number;
   key: string; // i18n key
 }
 
-export interface Unit {
+export interface IngredientUnit {
   id: number;
   key: string; // i18n key
 }
@@ -19,18 +19,23 @@ export interface Ingredient {
   id: number;
   name: string;
   amount: number;
-  unit: Unit;
+  unit: IngredientUnit;
+}
+
+export interface RecipeStep {
+  id: number;
+  content: string;
 }
 
 export interface Recipe {
   id: number;
   name: string;
-  tag: Tag;
+  tag: RecipeTag;
   desc: string;
   temperature: number;
   time: number;
   ingredients: Ingredient[];
-  recipe: string[];
+  steps: RecipeStep[];
   isFavorite: boolean;
   sourceUrl?: string;
 }
