@@ -7,6 +7,6 @@ export const insertInitialData = async (): Promise<void> => {
   ];
 
   for (const { id, key } of tags) {
-    await executeSql(`INSERT OR IGNORE INTO Tags (id, key) VALUES (?, ?)`, [id, key]);
+    await executeSql(`INSERT OR IGNORE INTO RecipeTags (id, key) VALUES (?, ?)`, [id, key]);
   }
 };
