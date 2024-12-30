@@ -1,5 +1,7 @@
 import SQLite, { SQLiteDatabase } from 'react-native-sqlite-storage';
 import { DATABASE_CONFIG } from 'configs';
+import { createTables } from './init/createTables';
+import { insertInitialData } from './init/insertInitialData';
 
 let db: SQLiteDatabase;
 
@@ -8,7 +10,8 @@ export const initializeDatabase = async (): Promise<void> => {
     db = await SQLite.openDatabase(DATABASE_CONFIG);
     console.log('Database initialized:', db);
 
-    // TODO: 테이블 생성 및 초기값 설정 추가 예정
+    await createTables();
+    await insertInitialData();
   } catch (error) {
     console.error('Failed to initialize database:', error);
   }
