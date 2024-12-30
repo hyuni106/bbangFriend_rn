@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { View, StyleSheet, FlatList } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
@@ -17,9 +17,13 @@ const RecipeListScreen = ({
 }: Props<ScreenName.RecipeListScreen>): React.ReactElement => {
   const { t } = useTranslation();
 
-  const [filterType, setFilterType] = useState<RecipeFilterType>(RecipeFilterType.ALL);
+  const [filterType, setFilterType] = useState<string>(RecipeFilterType.ALL);
 
-  const onFilterPress = (type: RecipeFilterType) => {
+  const onFilterPress = (type: RecipeFilterType, tagId?: number) => {
+    if (tagId !== undefined) {
+      setFilterType(String(tagId));
+      return;
+    }
     setFilterType(type);
   };
 
@@ -35,7 +39,7 @@ const RecipeListScreen = ({
     return <RecipeSummary style={styles.listItemWrapper} onItemPress={onRecipeItemPress} />;
   };
 
-  const listHeaderComponent = () => {
+  const listHeaderComponent = useMemo(() => {
     return (
       <RecipeListHeader
         style={styles.header}
@@ -43,7 +47,7 @@ const RecipeListScreen = ({
         onItemPress={onFilterPress}
       />
     );
-  };
+  }, [filterType]);
 
   const listEmptyComponent = () => {
     return <RecipeListEmptyView />;
