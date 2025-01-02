@@ -48,9 +48,20 @@ const RecipeInputs = ({}: RecipeInputsProps): React.ReactElement => {
     });
   };
 
-  const onChangeNameText = (text: string) => {
+  const handleChangeText = (
+    key: 'name' | 'desc' | 'sourceUrl' | 'temperature' | 'time',
+    text: string,
+  ) => {
     setState(draft => {
-      draft.name = text;
+      if (key === 'temperature' || key === 'time') {
+        if (!text || text === '') {
+          draft[key] = 0;
+          return;
+        }
+        draft[key] = parseInt(text, 10);
+      } else {
+        draft[key] = text;
+      }
     });
   };
 
@@ -72,38 +83,42 @@ const RecipeInputs = ({}: RecipeInputsProps): React.ReactElement => {
           value={state.name}
           label={t('recipe.form.name.label')}
           placeholder={t('recipe.form.name.placeholder')}
-          onChangeText={onChangeNameText}
+          onChangeText={text => handleChangeText('name', text)}
         />
       </View>
 
       <LabeledTextInput
-        value=""
+        value={state.desc}
         label={t('recipe.form.description.label')}
         placeholder={t('recipe.form.description.placeholder')}
+        onChangeText={text => handleChangeText('desc', text)}
       />
 
       <LabeledTextInput
-        value=""
+        value={state.sourceUrl}
         label={t('recipe.form.source.label')}
         placeholder={t('recipe.form.source.placeholder')}
+        onChangeText={text => handleChangeText('sourceUrl', text)}
       />
 
       <View style={styles.inputContainer}>
         <LabeledTextInput
           wrapperStyle={styles.flex1}
           textInputStyle={styles.textAlignRight}
-          value=""
+          value={`${state.temperature ? state.temperature : 0}`}
           label={t('recipe.form.oven.temperature.label')}
           suffix={t('recipe.form.oven.temperature.unit')}
           placeholder="0"
+          onChangeText={text => handleChangeText('temperature', text)}
         />
         <LabeledTextInput
           wrapperStyle={styles.flex1}
           textInputStyle={styles.textAlignRight}
-          value=""
+          value={`${state.time ? state.time : 0}`}
           label={t('recipe.form.oven.time.label')}
           suffix={t('recipe.form.oven.time.unit')}
           placeholder="0"
+          onChangeText={text => handleChangeText('time', text)}
         />
       </View>
     </View>
