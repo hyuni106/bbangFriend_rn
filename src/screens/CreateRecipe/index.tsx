@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
@@ -8,16 +8,36 @@ import { BackButtonNavBar } from 'components/NavigationBar';
 import { Colors } from 'styles';
 import { SingleButton } from 'components/common/Button';
 import { IngredientList, ProcessList, RecipeInputs } from 'components/Recipe/Editor';
+import SelectUnitPopupWrapper, { SelectUnitPopupWrapperRef } from './SelectUnitPopupWrapper';
+import { IngredientUnit } from 'models';
+import { IngredientUnitActions } from 'databases/ingredientUnit/actions';
 
 const CreateRecipeScreen = ({}: Props<ScreenName.CreateRecipeScreen>): React.ReactElement => {
   const { t } = useTranslation();
+
+  const [unitList, setUnitList] = useState<IngredientUnit[]>([]);
+
+  const selectUnitPopupWrapperRef = useRef<SelectUnitPopupWrapperRef>(null);
+
+  useEffect(() => {
+    const loadUnits = async () => {
+      const fetchedUnits = await IngredientUnitActions.fetchAllIngredientUnits();
+      setUnitList(fetchedUnits);
+    };
+
+    loadUnits();
+  }, []);
+
+  const onUnitSelectPress = () => {
+    selectUnitPopupWrapperRef.current?.show();
+  };
 
   return (
     <View style={styles.root}>
       <BackButtonNavBar title={t('recipe.add')} />
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.contentContainerStyle}>
         <RecipeInputs />
-        <IngredientList />
+        <IngredientList onUnitSelectPress={onUnitSelectPress} />
         <ProcessList />
       </ScrollView>
 
@@ -27,6 +47,8 @@ const CreateRecipeScreen = ({}: Props<ScreenName.CreateRecipeScreen>): React.Rea
         pressedColor={Colors.red2}
         title={t('button.add')}
       />
+
+      <SelectUnitPopupWrapper ref={selectUnitPopupWrapperRef} units={unitList} />
     </View>
   );
 };
