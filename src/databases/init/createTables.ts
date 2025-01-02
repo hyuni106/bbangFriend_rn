@@ -11,7 +11,8 @@ export const createTables = async (): Promise<void> => {
     // IngredientUnits 테이블 생성
     `CREATE TABLE IF NOT EXISTS IngredientUnits (
       id INTEGER PRIMARY KEY AUTOINCREMENT, 
-      key TEXT UNIQUE NOT NULL
+      key TEXT UNIQUE NOT NULL,
+      category TEXT
     );`,
 
     // Recipes 테이블 생성

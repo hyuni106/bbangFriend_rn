@@ -13,6 +13,7 @@ export interface RecipeTag {
 export interface IngredientUnit {
   id: number;
   key: string; // i18n key
+  category: string;
 }
 
 export interface Ingredient {
