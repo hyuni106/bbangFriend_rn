@@ -74,7 +74,7 @@ const Dropdown = <T,>(props: DropdownProps<T>): React.ReactElement => {
     <View style={[styles.root, style]}>
       <TouchableOpacity style={styles.infoContainer} onPress={onToggleDropdown}>
         <Text style={selectedOption ? styles.selectedOptionText : styles.pleaseSelectText}>
-          {selectedText}
+          {isI18n ? t(`${selectedText}`) : selectedText}
         </Text>
         {isOpen ? <IcDropdownTop /> : <IcDropdownBottom />}
       </TouchableOpacity>
