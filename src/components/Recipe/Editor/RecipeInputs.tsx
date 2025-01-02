@@ -48,6 +48,12 @@ const RecipeInputs = ({}: RecipeInputsProps): React.ReactElement => {
     });
   };
 
+  const onChangeNameText = (text: string) => {
+    setState(draft => {
+      draft.name = text;
+    });
+  };
+
   return (
     <View style={styles.root}>
       <View style={styles.inputContainer}>
@@ -63,9 +69,10 @@ const RecipeInputs = ({}: RecipeInputsProps): React.ReactElement => {
         />
         <LabeledTextInput
           wrapperStyle={styles.flex1_5}
-          value=""
+          value={state.name}
           label={t('recipe.form.name.label')}
           placeholder={t('recipe.form.name.placeholder')}
+          onChangeText={onChangeNameText}
         />
       </View>
 
