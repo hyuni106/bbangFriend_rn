@@ -1,11 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, StyleProp, ViewStyle } from 'react-native';
+import { useImmer } from 'use-immer';
 import { useTranslation } from 'react-i18next';
 
 import { LabeledTextInput } from 'components/common/TextInput';
 import { LabeledDropdown } from 'components/common/Dropdown';
 import { RecipeTagAction } from 'databases/recipeTags/actions';
 import { RecipeTag } from 'models';
+
+interface RecipeInputState {
+  name: string;
+  desc: string;
+  tag?: RecipeTag;
+  temperature?: number;
+  time?: number;
+  sourceUrl?: string;
+}
 
 interface RecipeInputsProps {
   style?: StyleProp<ViewStyle>;
@@ -14,6 +24,10 @@ interface RecipeInputsProps {
 const RecipeInputs = ({}: RecipeInputsProps): React.ReactElement => {
   const { t } = useTranslation();
   const [tags, setTags] = useState<RecipeTag[]>([]);
+  const [state, setState] = useImmer<RecipeInputState>({
+    name: '',
+    desc: '',
+  });
 
   const fetchAllRecipeTags = async () => {
     try {
@@ -28,9 +42,10 @@ const RecipeInputs = ({}: RecipeInputsProps): React.ReactElement => {
     fetchAllRecipeTags();
   }, []);
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const onOptionSelected = (option: RecipeTag) => {
-    //TODO: 선택한 태그 이벤트 연결 예정
+    setState(draft => {
+      draft.tag = option;
+    });
   };
 
   return (
@@ -40,6 +55,7 @@ const RecipeInputs = ({}: RecipeInputsProps): React.ReactElement => {
           wrapperStyle={styles.flex1}
           label={t('recipe.form.category.label')}
           placeholder={t('recipe.form.category.placeholder')}
+          selectedOption={state.tag}
           optionList={tags}
           displayKey={'key'}
           isI18n
