@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyleProp, ViewStyle, StyleSheet, View } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 import { Text, TouchableOpacity } from 'components/common/Base';
 import { Colors, Typography } from 'styles';
@@ -13,14 +14,25 @@ export interface DropdownProps<T> {
   optionList: T[];
   selectedOption?: T;
   placeholder: string;
+  displayKey?: keyof T;
+  isI18n?: boolean;
   onPress?: (isOpened: boolean) => void;
   onOptionSelected?: (option: T) => void;
-  displayKey?: keyof T;
 }
 
 const Dropdown = <T,>(props: DropdownProps<T>): React.ReactElement => {
-  const { style, optionList, selectedOption, placeholder, onPress, onOptionSelected, displayKey } =
-    props;
+  const { t } = useTranslation();
+
+  const {
+    style,
+    optionList,
+    selectedOption,
+    placeholder,
+    displayKey,
+    isI18n,
+    onPress,
+    onOptionSelected,
+  } = props;
   const [isOpen, setOpen] = useState(false);
 
   const onToggleDropdown = () => {
@@ -44,7 +56,9 @@ const Dropdown = <T,>(props: DropdownProps<T>): React.ReactElement => {
             setOpen(false);
             onOptionSelected?.(item);
           }}>
-          <Text style={styles.itemText}>{String(displayText)}</Text>
+          <Text style={styles.itemText}>
+            {isI18n ? t(`${String(displayText)}`) : String(displayText)}
+          </Text>
         </TouchableOpacity>
       );
     });
