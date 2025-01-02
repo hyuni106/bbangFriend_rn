@@ -6,10 +6,11 @@ import IngredientListItem from './IngredientListItem';
 
 interface IngredientListProps {
   style?: StyleProp<ViewStyle>;
+  onUnitSelectPress?: () => void;
 }
 
 const IngredientList = (props: IngredientListProps): React.ReactElement => {
-  const { style } = props;
+  const { style, onUnitSelectPress } = props;
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [ingredientList, setIngredientList] = useState<string[]>([]);
@@ -18,9 +19,22 @@ const IngredientList = (props: IngredientListProps): React.ReactElement => {
     <View style={[styles.root, style]}>
       <IngredientListHeader />
       {ingredientList.map((item, idx) => (
-        <IngredientListItem key={`ingredient_${idx}`} name={item} amount="" lastValue="g" />
+        <IngredientListItem
+          key={`ingredient_${idx}`}
+          name={item}
+          amount=""
+          lastValue="g"
+          onButtonPress={onUnitSelectPress}
+        />
       ))}
-      <IngredientListItem style={styles.ingredientItem} isAddItem name="" amount="" lastValue="g" />
+      <IngredientListItem
+        style={styles.ingredientItem}
+        isAddItem
+        name=""
+        amount=""
+        lastValue="g"
+        onButtonPress={onUnitSelectPress}
+      />
     </View>
   );
 };
