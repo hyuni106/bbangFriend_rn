@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, StyleProp, ViewStyle } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 import { LabeledTextInput } from 'components/common/TextInput';
 import { LabeledDropdown } from 'components/common/Dropdown';
+import { RecipeTagAction } from 'databases/recipeTags/actions';
+import { RecipeTag } from 'models';
 
 interface RecipeInputsProps {
   style?: StyleProp<ViewStyle>;
@@ -11,8 +13,25 @@ interface RecipeInputsProps {
 
 const RecipeInputs = ({}: RecipeInputsProps): React.ReactElement => {
   const { t } = useTranslation();
+  const [tags, setTags] = useState<RecipeTag[]>([]);
 
-  const categoryOptions = [t('recipe.tags.pastry'), t('recipe.tags.bread')];
+  const fetchAllRecipeTags = async () => {
+    try {
+      const fetchedTags = await RecipeTagAction.fetchAllRecipeTags();
+      setTags(fetchedTags);
+    } catch (error) {
+      console.error('Failed to fetch tags:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchAllRecipeTags();
+  }, []);
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const onOptionSelected = (option: RecipeTag) => {
+    //TODO: 선택한 태그 이벤트 연결 예정
+  };
 
   return (
     <View style={styles.root}>
@@ -20,8 +39,11 @@ const RecipeInputs = ({}: RecipeInputsProps): React.ReactElement => {
         <LabeledDropdown
           wrapperStyle={styles.flex1}
           label={t('recipe.form.category.label')}
-          optionList={categoryOptions}
           placeholder={t('recipe.form.category.placeholder')}
+          optionList={tags}
+          displayKey={'key'}
+          isI18n
+          onOptionSelected={onOptionSelected}
         />
         <LabeledTextInput
           wrapperStyle={styles.flex1_5}
