@@ -1,8 +1,7 @@
 export enum RecipeFilterType {
   ALL = 'all',
   FAVORITE = 'favorite',
-  COMFITS = 'comfits',
-  BREAD = 'bread',
+  TAG = 'tag',
 }
 
 export interface RecipeTag {
