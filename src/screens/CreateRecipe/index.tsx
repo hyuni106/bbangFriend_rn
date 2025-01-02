@@ -19,13 +19,13 @@ const CreateRecipeScreen = ({}: Props<ScreenName.CreateRecipeScreen>): React.Rea
 
   const selectUnitPopupWrapperRef = useRef<SelectUnitPopupWrapperRef>(null);
 
-  useEffect(() => {
-    const loadUnits = async () => {
-      const fetchedUnits = await IngredientUnitActions.fetchAllIngredientUnits();
-      setUnitList(fetchedUnits);
-    };
+  const fetchAllIngredientUnits = async () => {
+    const fetchedUnits = await IngredientUnitActions.fetchAllIngredientUnits();
+    setUnitList(fetchedUnits);
+  };
 
-    loadUnits();
+  useEffect(() => {
+    fetchAllIngredientUnits();
   }, []);
 
   const onUnitSelectPress = () => {
