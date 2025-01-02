@@ -18,6 +18,37 @@
       "pastry": "제과",
       "bread": "제빵"
     },
+    "units": {
+      "categories": {
+        "weight": "무게",
+        "volume": "부피",
+        "count": "개수",
+        "misc": "기타"
+      },
+      "weight": {
+        "g": "그램",
+        "kg": "킬로그램"
+      },
+      "volume": {
+        "ml": "밀리리터",
+        "l": "리터",
+        "tsp": "티스푼",
+        "tbsp": "테이블스푼",
+        "cup": "컵"
+      },
+      "count": {
+        "piece": "개",
+        "pinch": "꼬집",
+        "sheet": "장",
+        "string": "줄"
+      },
+      "misc": {
+        "bar": "판",
+        "bag": "봉지",
+        "chunk": "덩어리",
+        "slice": "조각"
+      }
+    },
     "no_list": {
       "message": "등록된 레시피가 없어요!",
       "description": "새로운 레시피를 기록해보세요"
@@ -54,6 +85,7 @@
       },
       "ingredient": {
         "label": "재료",
+        "desc": "재료의 단위를 선택해주세요.",
         "fields": {
           "name": "재료명",
           "amount": "용량",
