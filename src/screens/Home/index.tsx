@@ -8,9 +8,12 @@ import HomeMenu from './HomeMenu';
 import { BgCalculatorBtn, BgCheckListBtn, BgRecipeBtn } from 'assets/svgs';
 import { Colors, Typography } from 'styles';
 import { Text } from 'components/common/Base';
+import useLoadInitialData from './useLoadInitialData';
 
 const HomeScreen = ({ navigation }: Props<ScreenName.HomeScreen>): React.ReactElement => {
   const { t } = useTranslation();
+
+  useLoadInitialData();
 
   const menus = [
     {
