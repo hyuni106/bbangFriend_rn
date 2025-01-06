@@ -8,14 +8,18 @@ import { ScreenName } from 'navigation/ScreenNames';
 import { BackButtonNavBar } from 'components/NavigationBar';
 import { Colors } from 'styles';
 import { SingleButton } from 'components/common/Button';
-import { IngredientList, ProcessList, RecipeInputs } from 'components/Recipe/Editor';
+import { ProcessList, RecipeInputs } from 'components/Recipe/Editor';
 import SelectUnitPopupWrapper, { SelectUnitPopupWrapperRef } from './SelectUnitPopupWrapper';
 import { RootState } from 'features';
+import IngredientList, {
+  IngredientListRef,
+} from 'components/Recipe/Editor/IngredientList/IngredientList';
 
 const CreateRecipeScreen = ({}: Props<ScreenName.CreateRecipeScreen>): React.ReactElement => {
   const { t } = useTranslation();
 
   const selectUnitPopupWrapperRef = useRef<SelectUnitPopupWrapperRef>(null);
+  const ingredientListRef = useRef<IngredientListRef>(null);
 
   const unitList = useSelector((state: RootState) => state.units.unitList);
 
@@ -28,7 +32,7 @@ const CreateRecipeScreen = ({}: Props<ScreenName.CreateRecipeScreen>): React.Rea
       <BackButtonNavBar title={t('recipe.add')} />
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.contentContainerStyle}>
         <RecipeInputs />
-        <IngredientList onUnitSelectPress={onUnitSelectPress} />
+        <IngredientList ref={ingredientListRef} onUnitSelectPress={onUnitSelectPress} />
         <ProcessList />
       </ScrollView>
 
