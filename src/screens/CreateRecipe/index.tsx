@@ -38,6 +38,14 @@ const CreateRecipeScreen = ({}: Props<ScreenName.CreateRecipeScreen>): React.Rea
     });
   };
 
+  const onUnitSelectPress = (index: number) => {
+    selectUnitPopupWrapperRef.current?.show(index);
+  };
+
+  const onUnitSelected = (index: number, unit: IngredientUnit) => {
+    setIngredientList(draft => {
+      draft[index].unit = unit;
+    });
   };
 
   return (
@@ -60,7 +68,11 @@ const CreateRecipeScreen = ({}: Props<ScreenName.CreateRecipeScreen>): React.Rea
         title={t('button.add')}
       />
 
-      <SelectUnitPopupWrapper ref={selectUnitPopupWrapperRef} units={unitList} />
+      <SelectUnitPopupWrapper
+        ref={selectUnitPopupWrapperRef}
+        units={unitList}
+        onUnitSelected={onUnitSelected}
+      />
     </View>
   );
 };

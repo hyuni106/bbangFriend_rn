@@ -7,16 +7,18 @@ import { IngredientUnit } from 'models';
 
 interface SelectUnitPopupWrapperState {
   visible: boolean;
+  index?: number;
 }
 
 export interface SelectUnitPopupWrapperRef {
-  show: () => void;
+  show: (index: number) => void;
   hide: () => void;
 }
 
 interface SelectUnitPopupWrapperProps {
   style?: StyleProp<ViewStyle>;
   units: IngredientUnit[];
+  onUnitSelected?: (index: number, unit: IngredientUnit) => void;
 }
 
 const SelectUnitPopupWrapper = forwardRef(
@@ -27,11 +29,14 @@ const SelectUnitPopupWrapper = forwardRef(
 
     const { visible } = state;
 
-    const { style, units } = props;
+    const { style, units, onUnitSelected } = props;
 
-    const show = useCallback(() => {
-      setState({ visible: true });
-    }, [setState]);
+    const show = useCallback(
+      (index: number) => {
+        setState({ visible: true, index: index });
+      },
+      [setState],
+    );
 
     const hide = useCallback(() => {
       setState({ visible: false });
@@ -54,9 +59,16 @@ const SelectUnitPopupWrapper = forwardRef(
       invisible();
     };
 
+    const _onUnitSelected = (unit: IngredientUnit) => {
+      if (state.index === undefined) return;
+
+      onUnitSelected?.(state.index, unit);
+      invisible();
+    };
+
     return (
       <BaseModal isVisible={visible} style={style} onBackdropPress={onBackdropPress}>
-        <SelectUnitPopup units={units} />
+        <SelectUnitPopup units={units} onItemPress={_onUnitSelected} />
       </BaseModal>
     );
   },

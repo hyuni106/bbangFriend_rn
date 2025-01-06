@@ -7,9 +7,9 @@ import { IngredientListState } from 'screens/CreateRecipe';
 
 interface IngredientListProps {
   style?: StyleProp<ViewStyle>;
-  onUnitSelectPress?: () => void;
   ingredients: IngredientListState[];
   handleInputChange?: (index: number, key: 'name' | 'amount', value: string) => void;
+  onUnitSelectPress?: (index: number) => void;
 }
 
 const IngredientList = (props: IngredientListProps): React.ReactElement => {

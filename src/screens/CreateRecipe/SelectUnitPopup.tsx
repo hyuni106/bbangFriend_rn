@@ -26,7 +26,7 @@ const SelectUnitPopup = (props: SelectUnitPopupProps): React.ReactElement => {
   const styles = useMemo(() => createStyles(window), [window]);
   const { t } = useTranslation();
 
-  const { style, units } = props;
+  const { style, units, onItemPress } = props;
 
   const groupedUnits = units.reduce<Record<string, IngredientUnit[]>>((acc, unit) => {
     if (!acc[unit.category]) acc[unit.category] = [];
@@ -42,7 +42,10 @@ const SelectUnitPopup = (props: SelectUnitPopupProps): React.ReactElement => {
           <View key={category}>
             <Text style={styles.categoryTitleText}>{t(`recipe.units.categories.${category}`)}</Text>
             {units.map(unit => (
-              <TouchableOpacity key={`unit_${unit.id}`} style={styles.unitItemText}>
+              <TouchableOpacity
+                key={`unit_${unit.id}`}
+                style={styles.unitItemText}
+                onPress={() => onItemPress?.(unit)}>
                 <Text>{t(`${unit.key}`)}</Text>
               </TouchableOpacity>
             ))}
