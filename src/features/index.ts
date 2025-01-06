@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import unitReducer from './unitSlice';
+import tagReducer from './tagSlice';
 
 const store = configureStore({
   reducer: {
     units: unitReducer,
+    tags: tagReducer,
   },
 });
 
