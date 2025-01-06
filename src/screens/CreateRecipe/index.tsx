@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
+import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
 import { Props } from 'navigation/NavigationProps';
@@ -9,24 +10,14 @@ import { Colors } from 'styles';
 import { SingleButton } from 'components/common/Button';
 import { IngredientList, ProcessList, RecipeInputs } from 'components/Recipe/Editor';
 import SelectUnitPopupWrapper, { SelectUnitPopupWrapperRef } from './SelectUnitPopupWrapper';
-import { IngredientUnit } from 'models';
-import { IngredientUnitActions } from 'databases/ingredientUnit/actions';
+import { RootState } from 'features';
 
 const CreateRecipeScreen = ({}: Props<ScreenName.CreateRecipeScreen>): React.ReactElement => {
   const { t } = useTranslation();
 
-  const [unitList, setUnitList] = useState<IngredientUnit[]>([]);
-
   const selectUnitPopupWrapperRef = useRef<SelectUnitPopupWrapperRef>(null);
 
-  useEffect(() => {
-    const loadUnits = async () => {
-      const fetchedUnits = await IngredientUnitActions.fetchAllIngredientUnits();
-      setUnitList(fetchedUnits);
-    };
-
-    loadUnits();
-  }, []);
+  const unitList = useSelector((state: RootState) => state.units.unitList);
 
   const onUnitSelectPress = () => {
     selectUnitPopupWrapperRef.current?.show();

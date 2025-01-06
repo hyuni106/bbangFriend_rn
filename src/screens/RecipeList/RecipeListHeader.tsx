@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { StyleProp, ViewStyle, StyleSheet, View } from 'react-native';
+import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
 import { TouchableOpacity } from 'components/common/Base';
 import RecipeTag from 'components/Recipe/RecipeTag';
-import { RecipeFilterType, RecipeTag as Tags } from 'models';
-import { RecipeTagAction } from 'databases/recipeTags/actions';
+import { RecipeFilterType } from 'models';
+import { RootState } from 'features';
 
 interface FilterItem {
   type: RecipeFilterType;
@@ -22,20 +23,7 @@ const RecipeListHeader = (props: RecipeListHeaderProps): React.ReactElement => {
   const { t } = useTranslation();
   const { style, selectedFilter, onItemPress } = props;
 
-  const [tags, setTags] = useState<Tags[]>([]);
-
-  useEffect(() => {
-    const fetchTags = async () => {
-      try {
-        const fetchedTags = await RecipeTagAction.fetchAllRecipeTags();
-        setTags(fetchedTags);
-      } catch (error) {
-        console.error('Failed to fetch tags:', error);
-      }
-    };
-
-    fetchTags();
-  }, []);
+  const tagList = useSelector((state: RootState) => state.tags.tagList);
 
   const staticFilters: FilterItem[] = [
     { type: RecipeFilterType.ALL, title: t('recipe.tags.all') },
@@ -53,7 +41,7 @@ const RecipeListHeader = (props: RecipeListHeaderProps): React.ReactElement => {
         );
       })}
 
-      {tags.map(tag => {
+      {tagList.map(tag => {
         const isSelected = selectedFilter === String(tag.id);
         return (
           <TouchableOpacity
