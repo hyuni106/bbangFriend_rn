@@ -5,20 +5,21 @@ import { useTranslation } from 'react-i18next';
 import { Colors, Typography } from 'styles';
 import { AddButton, RemoveButton } from 'components/common/Button';
 import { Text, TouchableOpacity } from 'components/common/Base';
+import { IngredientUnit } from 'models';
 
 interface IngredientListItemProps {
   style?: StyleProp<ViewStyle>;
   isAddItem?: boolean;
   name: string;
   amount: string;
-  lastValue: string;
-  onButtonPress?: () => void;
+  unit: IngredientUnit;
+  onUnitSelectPress?: () => void;
 }
 
 const IngredientListItem = (props: IngredientListItemProps): React.ReactElement => {
   const { t } = useTranslation();
 
-  const { style, isAddItem = false, name, amount, lastValue, onButtonPress } = props;
+  const { style, isAddItem = false, name, amount, unit, onUnitSelectPress } = props;
 
   return (
     <View style={[styles.root, style]}>
@@ -35,8 +36,8 @@ const IngredientListItem = (props: IngredientListItemProps): React.ReactElement 
           placeholder="0"
           placeholderTextColor={Colors.gray4}
         />
-        <TouchableOpacity style={styles.ingredientTextWrapper} onPress={onButtonPress}>
-          <Text style={styles.ingredientText}>{lastValue}</Text>
+        <TouchableOpacity style={styles.ingredientTextWrapper} onPress={onUnitSelectPress}>
+          <Text style={styles.ingredientText}>{t(`${unit.key}`)}</Text>
         </TouchableOpacity>
       </View>
       {isAddItem ? <AddButton color={Colors.red1} /> : <RemoveButton color={Colors.red1} />}

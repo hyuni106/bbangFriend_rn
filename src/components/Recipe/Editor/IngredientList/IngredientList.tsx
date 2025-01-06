@@ -1,7 +1,6 @@
 import React, { forwardRef, Ref, useCallback, useImperativeHandle } from 'react';
 import { View, StyleSheet, StyleProp, ViewStyle } from 'react-native';
 import { useImmer } from 'use-immer';
-import { useTranslation } from 'react-i18next';
 
 import IngredientListHeader from './IngredientListHeader';
 import IngredientListItem from './IngredientListItem';
@@ -25,7 +24,6 @@ interface IngredientListProps {
 
 const IngredientList = forwardRef(
   (props: IngredientListProps, ref: Ref<IngredientListRef>): React.ReactElement => {
-    const { t } = useTranslation();
     const { style, unitList, onUnitSelectPress } = props;
 
     const [ingredientList, setIngredientList] = useImmer<IngredientListState[]>([
@@ -52,8 +50,8 @@ const IngredientList = forwardRef(
             style={styles.ingredientItem}
             name={item.name}
             amount={`${item.amount}`}
-            lastValue={t(`${item.unit.key}`)}
-            onButtonPress={onUnitSelectPress}
+            unit={item.unit}
+            onUnitSelectPress={onUnitSelectPress}
             isAddItem={idx === ingredientList.length - 1}
           />
         ))}
