@@ -13,13 +13,24 @@ interface IngredientListItemProps {
   name: string;
   amount: string;
   unit: IngredientUnit;
+  onNameChange?: (text: string) => void;
+  onAmountChange?: (text: string) => void;
   onUnitSelectPress?: () => void;
 }
 
 const IngredientListItem = (props: IngredientListItemProps): React.ReactElement => {
   const { t } = useTranslation();
 
-  const { style, isAddItem = false, name, amount, unit, onUnitSelectPress } = props;
+  const {
+    style,
+    isAddItem = false,
+    name,
+    amount,
+    unit,
+    onNameChange,
+    onAmountChange,
+    onUnitSelectPress,
+  } = props;
 
   return (
     <View style={[styles.root, style]}>
@@ -29,12 +40,14 @@ const IngredientListItem = (props: IngredientListItemProps): React.ReactElement 
           value={name}
           placeholder={t('recipe.form.ingredient.fields.name')}
           placeholderTextColor={Colors.gray4}
+          onChangeText={onNameChange}
         />
         <TextInput
           style={styles.amountInput}
           value={amount}
           placeholder="0"
           placeholderTextColor={Colors.gray4}
+          onChangeText={onAmountChange}
         />
         <TouchableOpacity style={styles.ingredientTextWrapper} onPress={onUnitSelectPress}>
           <Text style={styles.ingredientText}>{t(`${unit.key}`)}</Text>

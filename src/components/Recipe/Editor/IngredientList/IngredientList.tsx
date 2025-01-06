@@ -30,6 +30,16 @@ const IngredientList = forwardRef(
       { name: '', amount: 0, unit: unitList[0] },
     ]);
 
+    const handleInputChange = (index: number, field: 'name' | 'amount', value: string) => {
+      setIngredientList(draft => {
+        if (field === 'amount') {
+          draft[index][field] = Number(value);
+        } else {
+          draft[index][field] = value;
+        }
+      });
+    };
+
     const selectedIngredientUnit = useCallback(
       (idx: number, unit: IngredientUnit) => {
         setIngredientList(draft => {
@@ -51,6 +61,8 @@ const IngredientList = forwardRef(
             name={item.name}
             amount={`${item.amount}`}
             unit={item.unit}
+            onNameChange={text => handleInputChange(idx, 'name', text)}
+            onAmountChange={text => handleInputChange(idx, 'amount', text)}
             onUnitSelectPress={onUnitSelectPress}
             isAddItem={idx === ingredientList.length - 1}
           />
