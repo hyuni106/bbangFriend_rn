@@ -19,15 +19,18 @@ interface IngredientListState {
 
 interface IngredientListProps {
   style?: StyleProp<ViewStyle>;
+  unitList: IngredientUnit[];
   onUnitSelectPress?: () => void;
 }
 
 const IngredientList = forwardRef(
   (props: IngredientListProps, ref: Ref<IngredientListRef>): React.ReactElement => {
     const { t } = useTranslation();
-    const { style, onUnitSelectPress } = props;
+    const { style, unitList, onUnitSelectPress } = props;
 
-    const [ingredientList, setIngredientList] = useImmer<IngredientListState[]>([]);
+    const [ingredientList, setIngredientList] = useImmer<IngredientListState[]>([
+      { name: '', amount: 0, unit: unitList[0] },
+    ]);
 
     const selectedIngredientUnit = useCallback(
       (idx: number, unit: IngredientUnit) => {
@@ -46,20 +49,14 @@ const IngredientList = forwardRef(
         {ingredientList.map((item, idx) => (
           <IngredientListItem
             key={`ingredient_${idx}`}
+            style={styles.ingredientItem}
             name={item.name}
             amount={`${item.amount}`}
             lastValue={t(`${item.unit.key}`)}
             onButtonPress={onUnitSelectPress}
+            isAddItem={idx === ingredientList.length - 1}
           />
         ))}
-        <IngredientListItem
-          style={styles.ingredientItem}
-          isAddItem
-          name=""
-          amount=""
-          lastValue="g"
-          onButtonPress={onUnitSelectPress}
-        />
       </View>
     );
   },

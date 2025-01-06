@@ -32,7 +32,11 @@ const CreateRecipeScreen = ({}: Props<ScreenName.CreateRecipeScreen>): React.Rea
       <BackButtonNavBar title={t('recipe.add')} />
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.contentContainerStyle}>
         <RecipeInputs />
-        <IngredientList ref={ingredientListRef} onUnitSelectPress={onUnitSelectPress} />
+        <IngredientList
+          ref={ingredientListRef}
+          unitList={unitList}
+          onUnitSelectPress={onUnitSelectPress}
+        />
         <ProcessList />
       </ScrollView>
 
