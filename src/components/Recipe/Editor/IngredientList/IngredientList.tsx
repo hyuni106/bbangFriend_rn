@@ -1,76 +1,39 @@
-import React, { forwardRef, Ref, useCallback, useImperativeHandle } from 'react';
+import React from 'react';
 import { View, StyleSheet, StyleProp, ViewStyle } from 'react-native';
-import { useImmer } from 'use-immer';
 
 import IngredientListHeader from './IngredientListHeader';
 import IngredientListItem from './IngredientListItem';
-import { IngredientUnit } from 'models';
-
-export interface IngredientListRef {
-  selectedIngredientUnit?: (idx: number, unit: IngredientUnit) => void;
-}
-
-interface IngredientListState {
-  name: string;
-  amount: number;
-  unit: IngredientUnit;
-}
+import { IngredientListState } from 'screens/CreateRecipe';
 
 interface IngredientListProps {
   style?: StyleProp<ViewStyle>;
-  unitList: IngredientUnit[];
   onUnitSelectPress?: () => void;
+  ingredients: IngredientListState[];
+  handleInputChange?: (index: number, key: 'name' | 'amount', value: string) => void;
 }
 
-const IngredientList = forwardRef(
-  (props: IngredientListProps, ref: Ref<IngredientListRef>): React.ReactElement => {
-    const { style, unitList, onUnitSelectPress } = props;
+const IngredientList = (props: IngredientListProps): React.ReactElement => {
+  const { style, ingredients, handleInputChange, onUnitSelectPress } = props;
 
-    const [ingredientList, setIngredientList] = useImmer<IngredientListState[]>([
-      { name: '', amount: 0, unit: unitList[0] },
-    ]);
-
-    const handleInputChange = (index: number, field: 'name' | 'amount', value: string) => {
-      setIngredientList(draft => {
-        if (field === 'amount') {
-          draft[index][field] = Number(value);
-        } else {
-          draft[index][field] = value;
-        }
-      });
-    };
-
-    const selectedIngredientUnit = useCallback(
-      (idx: number, unit: IngredientUnit) => {
-        setIngredientList(draft => {
-          draft[idx].unit = unit;
-        });
-      },
-      [setIngredientList],
-    );
-
-    useImperativeHandle(ref, () => ({ selectedIngredientUnit }), [selectedIngredientUnit]);
-
-    return (
-      <View style={[styles.root, style]}>
-        <IngredientListHeader />
-        {ingredientList.map((item, idx) => (
-          <IngredientListItem
-            key={`ingredient_${idx}`}
-            style={styles.ingredientItem}
-            name={item.name}
-            amount={`${item.amount}`}
-            unit={item.unit}
-            onNameChange={text => handleInputChange(idx, 'name', text)}
-            onAmountChange={text => handleInputChange(idx, 'amount', text)}
-            onUnitSelectPress={onUnitSelectPress}
-            isAddItem={idx === ingredientList.length - 1}
-          />
-        ))}
-      </View>
-    );
-  },
-);
+  return (
+    <View style={[styles.root, style]}>
+      <IngredientListHeader />
+      {ingredients.map((item, idx) => (
+        <IngredientListItem
+          key={`ingredient_${idx}`}
+          style={styles.ingredientItem}
+          name={item.name}
+          amount={`${item.amount}`}
+          unit={item.unit}
+          onNameChange={text => handleInputChange?.(idx, 'name', text)}
+          onAmountChange={text => handleInputChange?.(idx, 'amount', text)}
+          onUnitSelectPress={() => onUnitSelectPress?.(idx)}
+          isAddItem={idx === ingredients.length - 1}
+        />
+      ))}
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   root: {
